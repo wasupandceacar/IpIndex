@@ -14,7 +14,7 @@ $city=$ar["city"];
 $isp=$ar["isp"];
 
 echo "你的ip是".$yourip."</br>";
-echo "来自".$country.$region.$city."（".$isp."）";
+echo "来自".$country.$region.$city." ".$isp;
 
 function getip()//获取ip
 {
