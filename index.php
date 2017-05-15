@@ -9,11 +9,12 @@
 $yourip=getip();
 $ar=getCity($yourip);
 $country=$ar["country"];
-$province=$ar["province"];
+$region=$ar["region"];
 $city=$ar["city"];
+$isp=$ar["isp"];
 
 echo "你的ip是".$yourip."</br>";
-echo "来自".$country.$province.$city;
+echo "来自".$country.$region.$city."（".$isp."）";
 
 function getip()//获取ip
 {
@@ -31,22 +32,23 @@ function getip()//获取ip
     return $ip;
 }
 
-function GetCity($ip = ''){//获取物理地址
-    $res = @file_get_contents('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js&ip=' . $ip);
-    if(empty($res)){ return false; }
-    $jsonMatches = array();
-    preg_match('#\{.+?\}#', $res, $jsonMatches);
-    if(!isset($jsonMatches[0])){ return false; }
-    $json = json_decode($jsonMatches[0], true);
-    if(isset($json['ret']) && $json['ret'] == 1){
-        $json['ip'] = $ip;
-        unset($json['ret']);
-    }else{
-        return false;
+function getCity($ip = '')
+{
+    if ($ip == '') {
+        $url = "http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json";
+        $ip=json_decode(file_get_contents($url), true);
+        $data = $ip;
+    } else {
+        $url="http://ip.taobao.com/service/getIpInfo.php?ip=".$ip;
+        $ip=json_decode(file_get_contents($url));
+        if ((string)$ip->code=='1') {
+            return false;
+        }
+        $data = (array)$ip->data;
     }
-    return $json;
-}
-?>
+
+    return $data;
+}?>
 </div>
 </body>
 </html>
