@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
@@ -9,6 +8,79 @@
 	<title>rep馆</title>
 </head>
 <body>
+  <?php
+
+  $yourip=getip();
+  $ar=getCity($yourip);
+  $country=$ar["country"];
+  $region=$ar["region"];
+  $city=$ar["city"];
+  $isp=$ar["isp"];
+  $datetime = new \DateTime;
+  $time=$datetime->format('Y-m-d H:i:s');
+
+  //读取
+  $mysql_server_name='138.68.41.21';
+  $mysql_username='root';
+  $mysql_password='1248163264128';
+  $mysql_database='visited_ip';
+  $conn=mysql_connect($mysql_server_name, $mysql_username, $mysql_password) or die("error connecting") ;
+  mysql_query("set names 'utf8'");
+  mysql_select_db($mysql_database);
+
+  //查找此ip是否访问
+  $sqlexist = "select distinct(ip_id) from rep_ip_info where ip_address='$yourip'";
+  $ipexist = mysql_query($sqlexist);
+  if (!mysql_num_rows($ipexist)) {
+      $sqlnum = "select distinct(ip_address) from rep_ip_info";
+      $ipdb = mysql_query($sqlnum);
+      $ipnum = mysql_num_rows($ipdb);
+      $ipid = $ipnum+1;
+      //写入数据库
+      $sqlwrite = "insert into rep_ip_info (ip_id, ip_address,ip_location,time) values ($ipid,'$yourip','$country$region$city$isp','$time')";
+      mysql_query($sqlwrite);
+      mysql_close();
+  } else {
+      $ipid = mysql_fetch_array($ipexist)['ip_id'];
+      //写入数据库
+      $sqlwrite = "insert into rep_ip_info (ip_id, ip_address,ip_location,time) values ($ipid,'$yourip','$country$region$city$isp','$time')";
+      mysql_query($sqlwrite);
+      mysql_close();
+  }
+
+  function getip()//获取ip
+  {
+      if (getenv("HTTP_CLIENT_IP") && strcasecmp(getenv("HTTP_CLIENT_IP"), "unknown")) {
+          $ip = getenv("HTTP_CLIENT_IP");
+      } elseif (getenv("HTTP_X_FORWARDED_FOR") && strcasecmp(getenv("HTTP_X_FORWARDED_FOR"), "unknown")) {
+          $ip = getenv("HTTP_X_FORWARDED_FOR");
+      } elseif (getenv("REMOTE_ADDR") && strcasecmp(getenv("REMOTE_ADDR"), "unknown")) {
+          $ip = getenv("REMOTE_ADDR");
+      } elseif (isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] && strcasecmp($_SERVER['REMOTE_ADDR'], "unknown")) {
+          $ip = $_SERVER['REMOTE_ADDR'];
+      } else {
+          $ip = "unknown";
+      }
+      return $ip;
+  }
+
+  function getCity($ip = '')
+  {
+      if ($ip == '') {
+          $url = "http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json";
+          $ip=json_decode(file_get_contents($url), true);
+          $data = $ip;
+      } else {
+          $url="http://ip.taobao.com/service/getIpInfo.php?ip=".$ip;
+          $ip=json_decode(file_get_contents($url));
+          if ((string)$ip->code=='1') {
+              return false;
+          }
+          $data = (array)$ip->data;
+      }
+
+      return $data;
+  }?>
 
 <div class="title">
 	<h1><a id="top" name="top">个人rep馆</a></h1>

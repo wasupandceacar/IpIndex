@@ -85,5 +85,6 @@ function getCity($ip = '')
     return $data;
 }?>
 </div>
+<div style="float:right"><a href="rep.php">本站个人的东方rep馆</a></div>
 </body>
 </html>
