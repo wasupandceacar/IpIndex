@@ -1,5 +1,6 @@
 <html>
 <head>
+<link rel = "shortcut icon" href="9.ico">
 <meta charset="UTF-8">
 </head>
 <body>
