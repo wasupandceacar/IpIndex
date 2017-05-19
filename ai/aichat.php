@@ -16,4 +16,5 @@
    $an=mysql_fetch_array($answerexist)['answer'];
    echo $an;
  }
+ mysql_close();
 ?>

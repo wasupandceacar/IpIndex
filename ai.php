@@ -23,24 +23,16 @@
         var msg=$("#messagebubble").val();
         msg=msg.replace(/(\n)+|(\r\n)+/g, "");
         $("#messagebubble").val("");
-        var now = new Date();
-        $("#chatbubble").html($("#chatbubble").html()+"<p class='card'>无名氏 - "+now.format("HH:mm:ss")+"</p>");
-        $("#chatbubble").html($("#chatbubble").html()+"<p class='message'>"+msg+"</p>");
-        $('#chatbubble').scrollTop($('#chatbubble')[0].scrollHeight);
+        print(1,msg);
         if(mode==0){
           var start = msg.indexOf("-");
           if(start==0){
             var oppration=msg.substring(1,msg.length);
-            var now = new Date();
             if(oppration=="t"){
-              $("#chatbubble").html($("#chatbubble").html()+"<p class='card'>小⑨ - "+now.format("HH:mm:ss")+"</p>");
-              $("#chatbubble").html($("#chatbubble").html()+"<p class='message'>"+"进入学习模式，输入-x退出"+"</p>");
-              $('#chatbubble').scrollTop($('#chatbubble')[0].scrollHeight);
+              print(0,"进入学习模式，输入-x退出</br>输入格式：</br>你要说什么;小⑨回答什么（分号为英文）");
               mode=1;
             }else{
-              $("#chatbubble").html($("#chatbubble").html()+"<p class='card'>小⑨ - "+now.format("HH:mm:ss")+"</p>");
-              $("#chatbubble").html($("#chatbubble").html()+"<p class='message'>"+"无法识别此指令"+"</p>");
-              $('#chatbubble').scrollTop($('#chatbubble')[0].scrollHeight);
+              print(0,"无法识别此指令");
             }
           }else{
             chat(msg);
@@ -49,19 +41,19 @@
           var start = msg.indexOf("-");
           if(start==0){
             var oppration=msg.substring(1,msg.length);
-            var now = new Date();
             if(oppration=="x"){
-              $("#chatbubble").html($("#chatbubble").html()+"<p class='card'>小⑨ - "+now.format("HH:mm:ss")+"</p>");
-              $("#chatbubble").html($("#chatbubble").html()+"<p class='message'>"+"退出学习模式"+"</p>");
-              $('#chatbubble').scrollTop($('#chatbubble')[0].scrollHeight);
+              print(0,"退出学习模式");
               mode=0;
             }else{
-              $("#chatbubble").html($("#chatbubble").html()+"<p class='card'>小⑨ - "+now.format("HH:mm:ss")+"</p>");
-              $("#chatbubble").html($("#chatbubble").html()+"<p class='message'>"+"无法识别此指令"+"</p>");
-              $('#chatbubble').scrollTop($('#chatbubble')[0].scrollHeight);
+              print(0,"无法识别此指令");
             }
           }else{
-
+            msgs=msg.split(";");
+            if(msgs.length==2){
+              teach(msgs[0],msgs[1]);
+            }else{
+              print(0,"请输入正确的格式：</br>你要说什么;小⑨回答什么（分号为英文）");
+            }
           }
         }
       });
@@ -76,10 +68,21 @@
           alert("出现错误");
         },
         success: function (data) {
-          var now = new Date();
-          $("#chatbubble").html($("#chatbubble").html()+"<p class='card'>小⑨ - "+now.format("HH:mm:ss")+"</p>");
-          $("#chatbubble").html($("#chatbubble").html()+"<p class='message'>"+data+"</p>");
-          $('#chatbubble').scrollTop($('#chatbubble')[0].scrollHeight);
+          print(0,data);
+        }
+      });
+    }
+    function teach(ask,answer){
+      $.ajax({
+        url: "ai/aiteach.php",
+        type: 'POST',
+        data: "ask="+ask+"&answer="+answer,
+        timeout: 7000,
+        error: function () {
+          alert("出现错误");
+        },
+        success: function (data) {
+          print(0,data);
         }
       });
     }
@@ -98,6 +101,17 @@
         for (var k in o)
           if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
       return fmt;
+    }
+    //信息显示
+    function print(char, msg){
+      var now = new Date();
+      if(char==0){
+        $("#chatbubble").html($("#chatbubble").html()+"<p class='card'>小⑨ - "+now.format("HH:mm:ss")+"</p>");
+      }else{
+        $("#chatbubble").html($("#chatbubble").html()+"<p class='card'>无名氏 - "+now.format("HH:mm:ss")+"</p>");
+      }
+      $("#chatbubble").html($("#chatbubble").html()+"<p class='message'>"+msg+"</p>");
+      $('#chatbubble').scrollTop($('#chatbubble')[0].scrollHeight);
     }
   </script>
 </head>
