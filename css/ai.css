@@ -14,3 +14,14 @@
   width:60px;
   height:40px;
 }
+
+.card{
+  color:#00F;
+  font-size:14px;
+  margin:1px;
+}
+
+.message{
+  margin:2px;
+  padding-bottom:3px;
+}
