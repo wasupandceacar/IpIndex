@@ -5,7 +5,7 @@
 </head>
 <body>
 <div style="float:left"><img src="flandre.jpg" width="540" height="510"/></div>
-<div style="float:left"><?php
+<div style="float:left; font-family:Consolas"><?php
 
 $yourip=getip();
 $ar=getCity($yourip);
@@ -28,11 +28,12 @@ mysql_select_db($mysql_database);
 //查找此ip是否访问
 $sqlexist = "select distinct(ip_id) from ip_info where ip_address='$yourip'";
 $ipexist = mysql_query($sqlexist);
+$sqlnum = "select distinct(ip_address) from ip_info";
+$ipdb = mysql_query($sqlnum);
+$ipnum = mysql_num_rows($ipdb);
 if (!mysql_num_rows($ipexist)) {
-    $sqlnum = "select distinct(ip_address) from ip_info";
-    $ipdb = mysql_query($sqlnum);
-    $ipnum = mysql_num_rows($ipdb);
     $ipid = $ipnum+1;
+    $ipnum = $ipid;
     echo "欢迎第一次访问过本站。你是本站第".$ipid."位访问者。</br>";
     //写入数据库
     $sqlwrite = "insert into ip_info (ip_id, ip_address,ip_location,time) values ($ipid,'$yourip','$country$region$city$isp','$time')";
@@ -49,7 +50,8 @@ if (!mysql_num_rows($ipexist)) {
 
 echo "你的ip是".$yourip."</br>";
 echo "来自".$country.$region.$city." ".$isp."</br>";
-echo "现在时间 ".$time;
+echo "现在时间 ".$time."</br>";
+echo "</br>本站已有".$ipnum."位访问者(`・ω・´)";
 
 function getip()//获取ip
 {
@@ -85,6 +87,6 @@ function getCity($ip = '')
     return $data;
 }?>
 </div>
-<div style="float:right"><a href="rep.php">本站个人的东方rep馆</a></div>
+<div style="float:right; font-family:Consolas"><a href="rep.php">个人的东方rep馆</a></div>
 </body>
 </html>
