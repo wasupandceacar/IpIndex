@@ -2,11 +2,71 @@
 <head>
 <link rel = "shortcut icon" href="9.ico">
 <meta charset="UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#sendbutton').on('click', function(e) {
+      e.stopPropagation();
+      var ipid=parseInt(document.getElementById('ipid').textContent);
+      var now = new Date();
+      var time=now.format("yyyy-MM-dd");
+      var msg=$('#messagebubble').val();
+      if(msg.gblen()<=200){
+        send(time, msg, ipid);
+      }else{
+        alert("字数过多。删掉一些吧。")
+      }
+    });
+  });
+  function send(time, msg, ipid){
+    $.ajax({
+      url: "php/comment.php",
+      type: 'POST',
+      data: "time="+time+"&msg="+msg+"&ipid="+ipid,
+      timeout: 7000,
+      error: function () {
+        alert("出现错误");
+      },
+      success: function (data) {
+        alert(data);
+      }
+    });
+  }
+  //日期格式化
+  Date.prototype.format = function (fmt) { //author: meizz
+    var o = {
+      "M+": this.getMonth() + 1, //月份
+      "d+": this.getDate(), //日
+      "H+": this.getHours(), //小时
+      "m+": this.getMinutes(), //分
+      "s+": this.getSeconds(), //秒
+      "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+      "S": this.getMilliseconds() //毫秒
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+      for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+  }
+  //计算建议长度
+  String.prototype.gblen = function() {
+    var len = 0;
+    for (var i=0; i<this.length; i++) {
+        if (this.charCodeAt(i)>127 || this.charCodeAt(i)==94) {
+             len += 2;
+         } else {
+             len ++;
+         }
+     }
+    return len;
+  }
+</script>
 </head>
 <body>
-<div style="float:left"><img src="flandre.jpg" width="540" height="510"/></div>
-<div style="float:left; font-family:Consolas"><?php
-
+<div style="float:left; font-family:Consolas;">
+<p><?php
 $yourip=getip();
 $ar=getCity($yourip);
 $country=$ar["country"];
@@ -34,7 +94,8 @@ $ipnum = mysql_num_rows($ipdb);
 if (!mysql_num_rows($ipexist)) {
     $ipid = $ipnum+1;
     $ipnum = $ipid;
-    echo "欢迎第一次访问过本站。你是本站第".$ipid."位访问者。</br>";
+    echo "欢迎第一次访问本站。你是本站第".$ipid."位访问者。</br>";
+    echo "Welcome to your visit for the first time. You are the ".$ipid."th visitor.</br>";
     //写入数据库
     $sqlwrite = "insert into ip_info (ip_id, ip_address,ip_location,time) values ($ipid,'$yourip','$country$region$city$isp','$time')";
     mysql_query($sqlwrite);
@@ -42,6 +103,7 @@ if (!mysql_num_rows($ipexist)) {
 } else {
     $ipid = mysql_fetch_array($ipexist)['ip_id'];
     echo "你曾经访问过本站。你曾经是本站第".$ipid."位访问者。</br>";
+    echo "You have visited here! You used to be a ".$ipid."th visitor.</br>";
     //写入数据库
     $sqlwrite = "insert into ip_info (ip_id, ip_address,ip_location,time) values ($ipid,'$yourip','$country$region$city$isp','$time')";
     mysql_query($sqlwrite);
@@ -49,9 +111,13 @@ if (!mysql_num_rows($ipexist)) {
 }
 
 echo "你的ip是".$yourip."</br>";
+echo "Your ip is ".$yourip."</br>";
 echo "来自".$country.$region.$city." ".$isp."</br>";
+echo "Come from ".$country.$region.$city." ".$isp."</br>";
 echo "现在时间 ".$time."</br>";
-echo "</br>本站已有".$ipnum."位访问者(`・ω・´)";
+echo "Current time ".$time."</br>";
+echo "</br>本站已有".$ipnum."位访问者(`・ω・´)</br>";
+echo "There are ".$ipnum." visitors since I built this site(`・ω・´)";
 
 function getip()//获取ip
 {
@@ -85,8 +151,30 @@ function getCity($ip = '')
     }
 
     return $data;
-}?>
+}?></p>
+<p></br></br></br></br>这个网站用来做啥，我还没决定。不过既然你找到了这里，你一定知道东方，也知道⑨吧。</br>
+  如果你有什么希望我的网站要做的（不管是东方或是其他），可以在下面的框框提个建议。</br>
+  也许我就会去做？(`・ω・ ´)</br>
+  I haven't decided to do what with this site. But since you find here, </br>
+  certainly you know Touhou, as well as ⑨. If you have any idea about what </br>
+  my website can do(Touhou or other is OK), please write down in the box below.</br>
+  Maybe I will do it?(`・ω・ ´)</p>
+<p><textarea class="messagebubble" id="messagebubble" name="message" rows="10" cols="24"></textarea></p>
+<p>
+  <button class="sendbutton" id="sendbutton">提交</br>submit</button>
+  <font color="red">中文最多100字/Your idea should be not over 200 characters</font>
+</p>
 </div>
-<div style="float:right; font-family:Consolas"><a href="rep.php">个人的东方rep馆</a></div>
+<div><img src="flandre.jpg" width="720" height="680"/><div>
+<div class="footer" style="font-family:Consolas;">
+	<address>
+		<a href="rep.php">个人的东方rep馆</br>Collection of my Touhou STG replayss</a>
+	</address>
+</div>
+<p hidden id="ipid">
+<?php
+echo $ipid;
+?>
+</p>
 </body>
 </html>
