@@ -16,7 +16,7 @@
       if(msg.gblen()<=200){
         send(time, msg, ipid);
       }else{
-        alert("字数过多。删掉一些吧。")
+        alert("Too many words. Delete some?")
       }
     });
   });
@@ -24,10 +24,10 @@
     $.ajax({
       url: "php/comment.php",
       type: 'POST',
-      data: "time="+time+"&msg="+msg+"&ipid="+ipid+"&lan=ch",
+      data: "time="+time+"&msg="+msg+"&ipid="+ipid+"&lan=en",
       timeout: 7000,
       error: function () {
-        alert("出现错误");
+        alert("some error");
       },
       success: function (data) {
         alert(data);
@@ -94,24 +94,24 @@ $ipnum = mysql_num_rows($ipdb);
 if (!mysql_num_rows($ipexist)) {
     $ipid = $ipnum+1;
     $ipnum = $ipid;
-    echo "欢迎第一次访问本站。你是本站第".$ipid."位访问者。</br></br>";
+    echo "Welcome to your visit for the first time. You are the ".$ipid."th visitor.</br><br>";
     //写入数据库
     $sqlwrite = "insert into ip_info (ip_id, ip_address,ip_location,time) values ($ipid,'$yourip','$country$region$city$isp','$time')";
     mysql_query($sqlwrite);
     mysql_close();
 } else {
     $ipid = mysql_fetch_array($ipexist)['ip_id'];
-    echo "你曾经访问过本站。你曾经是本站第".$ipid."位访问者。</br></br>";
+    echo "You have visited here! You used to be a ".$ipid."th visitor.</br></br>";
     //写入数据库
     $sqlwrite = "insert into ip_info (ip_id, ip_address,ip_location,time) values ($ipid,'$yourip','$country$region$city$isp','$time')";
     mysql_query($sqlwrite);
     mysql_close();
 }
 
-echo "你的ip是".$yourip."</br></br>";
-echo "来自".$country.$region.$city." ".$isp."</br></br>";
-echo "现在时间 ".$time."</br></br>";
-echo "</br>本站已有".$ipnum."位访问者(`・ω・´)</br></br>";
+echo "Your ip is ".$yourip."</br><br>";
+echo "Come from ".$country."</br></br>";
+echo "Current time ".$time."</br></br>";
+echo "There are ".$ipnum." visitors since I built this site(`・ω・´)";
 
 function getip()//获取ip
 {
@@ -146,21 +146,22 @@ function getCity($ip = '')
 
     return $data;
 }?></p>
-<p></br></br></br></br></br></br>这个网站用来做啥，我还没决定。不过既然你找到了这里，你一定知道东方，也知道⑨吧。</br>
-  如果你有什么希望我的网站要做的（不管是东方或是其他），可以在下面的框框提个建议。</br>
-  也许我就会去做？(`・ω・ ´)</br></br>
-  </p>
+<p></br></br></br></br></br></br>
+  I haven't decided to do what with this site. But since you find here, </br>
+  certainly you know Touhou, as well as ⑨. If you have any idea about what </br>
+  my website can do(Touhou or other is OK), please write down in the box below.</br>
+  Maybe I will do it?(`・ω・ ´)</br></br></p>
 <p><textarea class="messagebubble" id="messagebubble" name="message" rows="10" cols="24"></textarea></p>
 <p>
-  <button class="sendbutton" id="sendbutton">提交</button>
-  <font color="red">中文最多100字</font>
+  <button class="sendbutton" id="sendbutton">submit</button>
+  <font color="red">Your idea should be not over 200 characters</font>
 </p>
 </div>
 <div><img src="flandre.jpg" width="720" height="680"/><div>
 <div class="footer" style="font-family:Consolas;">
-  <a style="float:left;" href="index_en.php">English Page</a>
+  <a style="float:left;" href="index.php">中文页面</a>
 	<address style="float:right;">
-		<a href="rep.php">个人的东方rep馆</a>
+		<a href="rep.php">Collection of my Touhou STG replays</a>
 	</address>
 </div>
 <p hidden id="ipid">
