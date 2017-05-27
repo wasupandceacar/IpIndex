@@ -70,10 +70,6 @@
 $yourip=getip();
 $ar=getCity($yourip);
 $country=$ar["country"];
-if($country!='中国'){
-  header("Location: http://www.cirno.com.cn/index_en.php"); 
-  exit;
-}
 $region=$ar["region"];
 $city=$ar["city"];
 $isp=$ar["isp"];

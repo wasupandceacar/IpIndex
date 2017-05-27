@@ -159,7 +159,7 @@ function getCity($ip = '')
 </div>
 <div><img src="flandre.jpg" width="720" height="680"/><div>
 <div class="footer" style="font-family:Consolas;">
-  <a style="float:left;" href="index.php">中文页面</a>
+  <a style="float:left;" href="index_ch.php">中文页面</a>
 	<address style="float:right;">
 		<a href="rep.php">Collection of my Touhou STG replays</a>
 	</address>
