@@ -1,3 +1,16 @@
 .table{
     table-layout: fixed;
+    display: block !important;
+}
+
+.table th, .table td {
+    text-align: center;
+}
+
+.no-filter-control {
+    height: 34px;
+}
+
+.filter-control {
+    margin: 0 2px 2px 2px;
 }

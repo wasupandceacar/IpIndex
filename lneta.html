@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel = "shortcut icon" href="9.ico">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8">
@@ -19,24 +20,24 @@
 <body class="nav-md">
   <div class="container body">
     <div class="main_container">
-      <div class="table-responsive">
-        <table id="lneta-list">
+      <div class="table-responsive" data-filter-control="true">
+        <table class="table" id="lneta-list">
           <colgroup>
             <col style="width:10%">
             <col style="width:15%">
             <col style="width:15%">
+            <col style="width:15%">
+            <col style="width:15%">
             <col style="width:30%">
-            <col style="width:15%">
-            <col style="width:15%">
           </colgroup>
           <thead>
             <tr>
               <th>av号</th>
+              <th data-filter-control="select">作品</th>
+              <th data-filter-control="select">neta类型</th>
               <th>投稿者</th>
               <th>投稿时间</th>
               <th>视频简介</th>
-              <th>作品</th>
-              <th>neta类型</th>
             </tr>
           </thead>
         </table>
@@ -50,6 +51,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
     <script src="https://rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/extensions/export/bootstrap-table-export.js"></script>
+    <script src="js/filter.js"></script>
     <script src="js/lneta.js"></script>
     <script>
       $(document).ready(function() {

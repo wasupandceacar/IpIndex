@@ -1,10 +1,5 @@
 var lnetaList = {
   init: function() {
-    $("#search").keydown(function() {
-      if (event.keyCode == "13") {
-        strategyList.requestSearch(encodeURIComponent($("#search").val()));
-      }
-    });
     lnetaList.initTable();
   },
   initTable: function() {
@@ -17,41 +12,42 @@ var lnetaList = {
       striped: true,
       cache: false,
       sidePagination: "client",
+      sortName: 'av',
+      sortable: true,
+      sortOrder: "desc",
       strictSearch: false,
       trimOnSearch: true,
       contentType: "application/json; charset=utf-8",
       scriptCharset: "utf-8",
-      idField: "id",
+      idField: "av",
+      filterControl: true,
       columns: [{
           field: 'av',
           searchable: false,
           sortable: true,
           formatter: function(value, row, index) {
-            return "<a href='http://www.bilibili.com/video/av"+value+"'>" + value + "</a>";
+            return "<a href='http://www.bilibili.com/video/av" + value + "'>" + value + "</a>";
           }
-        }, {
-          field: 'name',
-          searchable: true,
-        },
-        {
-          field: 'time',
-          searchable: false,
-          sortable: true
-        },
-        {
-          field: 'comment',
-          searchable: false,
-          sortable: false
         },
         {
           field: 'work',
-          searchable: true,
-          sortable: true
+          searchable: true
         },
         {
           field: 'type',
-          searchable: true,
-          sortable: true
+          searchable: true
+        },
+        {
+          field: 'name',
+          searchable: true
+        },
+        {
+          field: 'time',
+          searchable: false
+        },
+        {
+          field: 'comment',
+          searchable: false
         }
       ],
       url: "json/1.json",
@@ -65,5 +61,8 @@ var lnetaList = {
     };
     $("#lneta-list").bootstrapTable(optionSet);
     $(".bootstrap-table .form-control").attr("placeholder", "投稿者/作品/neta类型");
+    $(window).resize(function() {
+      $('#lneta-list').bootstrapTable('resetView');
+    });
   }
 };
