@@ -31,3 +31,11 @@
     border-bottom: 1px solid #eee;
     border-radius: 0;
 }
+
+.img-thumbnail{
+  margin: 10px 0px 2px 2px;
+}
+
+.h2title{
+  margin: 4px 0px 2px 2px;
+}
