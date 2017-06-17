@@ -14,3 +14,20 @@
 .filter-control {
     margin: 0 2px 2px 2px;
 }
+
+.fix-sticky {
+    position: fixed;
+    z-index: 100;
+}
+.fix-sticky thead {
+    background: #fff;
+}
+
+.fix-sticky thead th,
+.fix-sticky thead th:first-child {
+    text-align: center;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #eee;
+    border-radius: 0;
+}

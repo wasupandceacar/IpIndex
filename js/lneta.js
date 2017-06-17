@@ -7,7 +7,7 @@ var lnetaList = {
       dataType: "json",
       pagination: true,
       pageNumber: 1,
-      pageSize: 20,
+      pageSize: 25,
       search: true,
       striped: true,
       cache: false,
@@ -21,6 +21,7 @@ var lnetaList = {
       scriptCharset: "utf-8",
       idField: "av",
       filterControl: true,
+      stickyHeader: true,
       columns: [{
           field: 'av',
           searchable: false,
