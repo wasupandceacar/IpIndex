@@ -1,5 +1,5 @@
 .form-control{
-  margin: 10px 10px 10px 10px;
+  margin: 10px 0px 10px 0px;
   max-width: 100%;
 }
 
@@ -8,5 +8,6 @@
 }
 
 .btn-default{
-  margin: 10px -10px 10px -10px;
+  margin: 10px 0px 10px 0px;
+  border: ;
 }

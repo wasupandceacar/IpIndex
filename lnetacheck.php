@@ -24,11 +24,11 @@
       <div class="title">
         <center>
           <h4>请填写你发现的视频信息错误（请注意核对是否填错av号，请勿填写无关内容）</h4></center>
-      </div>
+      </div><center>
       <input id="av" class="form-control col-md-7 col-xs-12" type="number" placeholder="填入需要修改或补漏的视频av号">
       <input id="reason" class="form-control col-md-7 col-xs-12" type="text" placeholder="填入该视频需要改进的理由（如表格中无此视频、视频的作品或neta类型写错等）">
       <button id="send" class="btn btn-default btn-block pull-right">提交</button>
-    </div>
+    </div></center>
 
     <!-- jQuery -->
     <script src="js/jquery-3.2.1.min.js"></script>
