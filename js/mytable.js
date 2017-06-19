@@ -6,7 +6,7 @@
             return '少女加载中。。。';
         },
         formatRecordsPerPage: function (pageNumber) {
-            return '，少女每页会显示 ' + pageNumber + ' 条Lneta';
+            return '&emsp;少女每页会显示 ' + pageNumber + ' 条Lneta';
         },
         formatShowingRows: function (pageFrom, pageTo, totalRows) {
             return '少女显示了第 ' + pageFrom + ' 到第 ' + pageTo + ' 条Lneta，一共有 ' + totalRows + ' 条Lneta';
