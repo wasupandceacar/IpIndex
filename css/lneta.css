@@ -33,7 +33,8 @@
 }
 
 .img-thumbnail{
-  margin: 10px 0px 2px 2px;
+  margin: -20px 0px 0px -15px;
+  max-width: 127%;
 }
 
 .h2title{
@@ -42,4 +43,12 @@
 
 .btn-default{
   color: #000;
+}
+
+.navbar-default{
+  background-image: linear-gradient(to bottom,#2e0bff 0,#0fe9ff 100%);
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.open>a{
+  background-image: linear-gradient(to bottom,#14ff0f 0,#bdedbd 100%);
 }
