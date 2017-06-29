@@ -8,31 +8,13 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="cache-control" content="max-age=1800">
 
   <title>Lneta馆</title>
 
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <link rel="stylesheet" href="css/lneta.css">
-  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function(){
-      send();
-    });
-    function send(){
-      $.ajax({
-        url: "php/getlog.php",
-        type: 'POST',
-        timeout: 7000,
-        error: function () {
-          alert("发生错误");
-        },
-        success: function (data) {
-          $('#log').html(data);
-        }
-      });
-    }
-  </script>
   <base target="_blank">
 </head>
 
@@ -53,20 +35,46 @@
         <div class="collapse navbar-collapse" id="coll">
           <ul class="nav navbar-nav">
             <li><a href="lneta.html" target="_self">统计表格</a></li>
-            <li><a href="lnetachart.html" target="_self">统计图形</a></li>
-            <li class="active"><a href="updatalog.php" target="_self">维护日志</a></li>
+            <li class="active"><a href="lnetachart.html" target="_self">统计图形</a></li>
+            <li><a href="updatalog.php" target="_self">维护日志</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="main_container">
-      <div class="title">
-        <h2 class="h2title">维护日志</h2>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            作品总体
+        </h3>
+        </div>
+        <div class="panel-body">
+          <div id="lneta-pie" style="width: 100%;height:500px"></div>
+        </div>
       </div>
-        <h2></h2>
-        <div id="log" class="subtitle">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            各作neta细化
+        </h3>
+        </div>
+        <div class="panel-body">
+          <div id="lneta-chart" style="width: 100%;height:600px"></div>
+        </div>
       </div>
     </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdn.bootcss.com/echarts/3.6.2/echarts.min.js"></script>
+  <script src="js/lnetachart.js"></script>
+  <script>
+    $(document).ready(function() {
+      lnetaChart.init();
+    });
+  </script>
 
 </body>
 

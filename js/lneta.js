@@ -10,7 +10,7 @@ var lnetaList = {
       pageSize: 25,
       search: true,
       striped: true,
-      cache: false,
+      cache: true,
       sidePagination: "client",
       sortName: 'av',
       sortable: true,
