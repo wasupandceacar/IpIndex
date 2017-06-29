@@ -13,8 +13,26 @@
 
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
   <link rel="stylesheet" href="css/lneta.css">
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      send();
+    });
+    function send(){
+      $.ajax({
+        url: "php/getlog.php",
+        type: 'POST',
+        timeout: 7000,
+        error: function () {
+          alert("发生错误");
+        },
+        success: function (data) {
+          $('#log').html(data);
+        }
+      });
+    }
+  </script>
   <base target="_blank">
 </head>
 
@@ -34,60 +52,25 @@
         </div>
         <div class="collapse navbar-collapse" id="coll">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="lneta.html" target="_self">统计表格</a></li>
+            <li><a href="lneta.html" target="_self">统计表格</a></li>
             <li><a href="unfinished.html" target="_self">统计图形</a></li>
-            <li><a href="updatalog.php" target="_self">维护日志</a></li>
+            <li class="active"><a href="updatalog.php" target="_self">维护日志</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="main_container">
       <div class="title">
-        <center>
-          <h2 class="h2title">B站Lneta统计站</h2></center>
+        <h2 class="h2title">维护日志</h2>
       </div>
-      <div class="subtitle">
-        <center>
-          <h4>感谢南大东方群（210085479）的小伙伴们和其他圈内好友的支持和援助。如果你发现未收录的视频或者已收录的视频信息错误，请点<a href="lnetacheck.php">这里</a></h4></center>
-      </div>
-      <div class="table-responsive" data-filter-control="true">
-        <table class="table" id="lneta-list">
-          <colgroup>
-            <col style="width:10%">
-            <col style="width:15%">
-            <col style="width:15%">
-            <col style="width:15%">
-            <col style="width:15%">
-            <col style="width:30%">
-          </colgroup>
-          <thead>
-            <tr>
-              <th>av号</th>
-              <th data-filter-control="select">作品</th>
-              <th data-filter-control="select">neta类型</th>
-              <th>投稿者</th>
-              <th>投稿时间</th>
-              <th>视频简介</th>
-            </tr>
-          </thead>
-        </table>
+        <h2></h2>
+        <div id="log" class="subtitle">
       </div>
     </div>
 
     <!-- jQuery -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
-    <script src="js/mytable.js"></script>
-    <script src="js/filter.js"></script>
-    <script src="js/mobile.js"></script>
-    <script src="js/sticky.js"></script>
-    <script src="js/lneta.js"></script>
-    <script>
-      $(document).ready(function() {
-        lnetaList.init();
-      });
-    </script>
 
 </body>
 
