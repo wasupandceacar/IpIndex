@@ -46,7 +46,7 @@ var lnetaChart = {
       grid: {
         left: '3%',
         right: '4%',
-        bottom: '3%',
+        top: '15%',
         containLabel: true
       },
       xAxis: [{
@@ -119,8 +119,8 @@ var lnetaChart = {
       },
       series: [{
         type: 'pie',
-        radius: '80%',
-        center: ['40%', '50%'],
+        radius: '63%',
+        center: ['50%', '67%'],
         data: [{
             value: lnetaChart.sum(lnetaChart.lnetaarray[0]),
             name: '红魔乡'
