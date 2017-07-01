@@ -273,6 +273,15 @@
 		</td>
 	</tr>
 
+	<tr>
+		<td>辉针城LNB</td>
+		<td>2017/06/27</td>
+		<td>历时10小时。考试周中烦躁所打，各种sabi撞，城的弹幕上手比较困难，特别是正邪这种反人类弹幕，感觉自己以前的避弹经验一无是处，真是痛苦啊。机体也是没有猴子的特性，打起来比较难受</td>
+		<td>
+			<a href="rep/th14_lnb.rpy">下载链接</a>
+		</td>
+	</tr>
+
 </table>
 
 <div class="pageNavi"><a href="#top">↑Above</a></div>
