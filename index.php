@@ -71,7 +71,7 @@ $yourip=getip();
 $ar=getCity($yourip);
 $country=$ar["country"];
 if($country!='中国'){
-  header("Location: http://www.cirno.com.cn/index_en.php"); 
+  header("Location: http://www.cirno.com.cn/index_en.php");
   exit;
 }
 $region=$ar["region"];
@@ -165,6 +165,7 @@ function getCity($ip = '')
   <a style="float:left;" href="index_en.php">English Page</a>
 	<address style="float:right;">
 		<a href="rep.php">个人的东方rep馆</a>
+    <a href="lneta.html">私人B站东方Lneta统计馆</a>
 	</address>
 </div>
 <p hidden id="ipid">

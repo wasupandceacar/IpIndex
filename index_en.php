@@ -162,6 +162,7 @@ function getCity($ip = '')
   <a style="float:left;" href="index_ch.php">中文页面</a>
 	<address style="float:right;">
 		<a href="rep.php">Collection of my Touhou STG replays</a>
+    <a href="lneta.html">Private Collection of Touhou Lnetas in Bilibili</a>
 	</address>
 </div>
 <p hidden id="ipid">

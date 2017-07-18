@@ -161,6 +161,7 @@ function getCity($ip = '')
   <a style="float:left;" href="index_en.php">English Page</a>
 	<address style="float:right;">
 		<a href="rep.php">个人的东方rep馆</a>
+    <a href="lneta.html">私人B站东方Lneta统计馆</a>
 	</address>
 </div>
 <p hidden id="ipid">
