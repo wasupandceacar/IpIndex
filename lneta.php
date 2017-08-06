@@ -124,6 +124,44 @@
           </thead>
         </table>
       </div>
+      <div style="position: fixed; right: 0; bottom: 0; background-image:url('mafuyo.png'); width:19%; height:36%;">
+        <p style="font-size: 12px; position: absolute; left: 170px; top: 79px">总访问：
+          <?php
+          //读取
+          $mysql_server_name='138.68.41.21';
+          $mysql_username='root';
+          $mysql_password='1248163264128';
+          $mysql_database='visited_ip';
+          $conn=mysql_connect($mysql_server_name, $mysql_username, $mysql_password) or die("error connecting") ;
+          mysql_query("set names 'utf8'");
+          mysql_select_db($mysql_database);
+
+          //查找此ip是否访问
+          $sqlnum = "select * from lneta_ip_info";
+          $ipdb = mysql_query($sqlnum);
+          $ipnum = mysql_num_rows($ipdb);
+          echo $ipnum;
+          ?>
+        </p>
+        <p style="font-size: 12px; position: absolute; left: 170px; top: 97px">今日：
+          <?php
+          //读取
+          $mysql_server_name='138.68.41.21';
+          $mysql_username='root';
+          $mysql_password='1248163264128';
+          $mysql_database='visited_ip';
+          $conn=mysql_connect($mysql_server_name, $mysql_username, $mysql_password) or die("error connecting") ;
+          mysql_query("set names 'utf8'");
+          mysql_select_db($mysql_database);
+
+          //查找此ip是否访问
+          $sqlnum = "select * from lneta_ip_info where to_days(time) = to_days(now())";
+          $ipdb = mysql_query($sqlnum);
+          $ipnum = mysql_num_rows($ipdb);
+          echo $ipnum;
+          ?>
+        </p>
+      </div>
     </div>
 
     <!-- jQuery -->
