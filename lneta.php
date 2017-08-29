@@ -102,7 +102,7 @@
         <center>
           <h4>感谢南大东方群（210085479）的小伙伴们和其他圈内好友的支持和援助。如果你发现未收录的视频或者已收录的视频信息错误，请点<a href="lnetacheck.php">这里</a></h4></center>
           <h4>&nbsp;&nbsp;注：仅仅不依靠作品系统而无NM或NB或低封等的，将不被计入在内</h4>
-          <h4>&nbsp;&nbsp;统计站1元钱捐助二维码入口（啊啊啊服务器要没钱了）：<a href="alipay.html">好心人们点这里</a></h4>
+          <h4>&nbsp;&nbsp;统计站捐助链接加二维码入口（啊啊啊服务器要没钱了）：<a href="alipay.html">1元笑脸迎人</a>&nbsp;&nbsp;<a href="alipay5.html">5元茶水伺候</a>&nbsp;&nbsp;<a href="alipay25.html">25元随意S</a></h4>
       </div>
       <div class="table-responsive" data-filter-control="true">
         <table class="table" id="lneta-list">
