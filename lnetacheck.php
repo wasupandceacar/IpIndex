@@ -29,6 +29,7 @@
       <input id="reason" class="form-control col-md-7 col-xs-12" type="text" placeholder="填入该视频需要改进的理由（如表格中无此视频、视频的作品或neta类型写错等）">
       <button id="send" class="btn btn-default btn-block pull-right">提交</button>
     </div></center>
+  </div>
 
     <!-- jQuery -->
     <script src="js/jquery-3.2.1.min.js"></script>

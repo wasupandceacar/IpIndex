@@ -48,7 +48,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand">
-            <img src="logo9.png" class="img-thumbnail" width="79px">
+            <img src="img/logo9.png" class="img-thumbnail" width="79px">
           </a>
         </div>
         <div class="collapse navbar-collapse" id="coll">
