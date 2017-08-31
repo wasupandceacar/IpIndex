@@ -5,6 +5,13 @@
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-4405187196186225",
+    enable_page_level_ads: true
+  });
+</script>
 <script type="text/javascript">
   $(document).ready(function(){
     $('#sendbutton').on('click', function(e) {
