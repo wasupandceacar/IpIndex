@@ -192,6 +192,15 @@
 		</td>
 	</tr>
 
+	<tr>
+		<td>天空璋初通</td>
+		<td>2017/09/04</td>
+		<td>一把通，太简单，资源太多</td>
+		<td>
+			<a href="rep/th16_l.rpy">下载链接</a>
+		</td>
+	</tr>
+
 </table>
 
 <div class="pageNavi"><a href="#top">↑Above</a></div>
