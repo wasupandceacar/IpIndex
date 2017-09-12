@@ -36,7 +36,7 @@ var osutable = {
         },
         'info': '当前显示 _START_ 到 _END_ 条，共 _TOTAL_ 条map记录',
         'infoEmpty': '没有相关map信息',
-        'infoFiltered': '搜索到 _MAX_ 条map记录'
+        'infoFiltered': ''
       }
     });
   }
