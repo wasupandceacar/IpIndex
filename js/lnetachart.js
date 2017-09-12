@@ -10,6 +10,7 @@ var lnetaChart = {
       [0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0, 0]
     ];
     lnetaChart.initData();
@@ -52,7 +53,7 @@ var lnetaChart = {
       },
       xAxis: [{
         type: 'category',
-        data: ['红魔乡', '妖妖梦', '永夜抄', '风神录', '地灵殿', '星莲船', '神灵庙', '辉针城', '绀珠传', '天空璋']
+        data: ['红魔乡', '妖妖梦', '永夜抄', '风神录', '地灵殿', '星莲船', '大战争', '神灵庙', '辉针城', '绀珠传', '天空璋']
       }],
       yAxis: [{
         type: 'value'
@@ -62,42 +63,42 @@ var lnetaChart = {
           type: 'bar',
           stack: '类型',
           barWidth: '70%',
-          data: [lnetaChart.lnetaarray[0][0], lnetaChart.lnetaarray[1][0], lnetaChart.lnetaarray[2][0], lnetaChart.lnetaarray[3][0], lnetaChart.lnetaarray[4][0], lnetaChart.lnetaarray[5][0], lnetaChart.lnetaarray[6][0], lnetaChart.lnetaarray[7][0], lnetaChart.lnetaarray[8][0], lnetaChart.lnetaarray[9][0]]
+          data: [lnetaChart.lnetaarray[0][0], lnetaChart.lnetaarray[1][0], lnetaChart.lnetaarray[2][0], lnetaChart.lnetaarray[3][0], lnetaChart.lnetaarray[4][0], lnetaChart.lnetaarray[5][0], lnetaChart.lnetaarray[6][0], lnetaChart.lnetaarray[7][0], lnetaChart.lnetaarray[8][0], lnetaChart.lnetaarray[9][0], lnetaChart.lnetaarray[10][0]]
         },
         {
           name: '单NM',
           type: 'bar',
           stack: '类型',
           barWidth: '70%',
-          data: [lnetaChart.lnetaarray[0][1], lnetaChart.lnetaarray[1][1], lnetaChart.lnetaarray[2][1], lnetaChart.lnetaarray[3][1], lnetaChart.lnetaarray[4][1], lnetaChart.lnetaarray[5][1], lnetaChart.lnetaarray[6][1], lnetaChart.lnetaarray[7][1], lnetaChart.lnetaarray[8][1], lnetaChart.lnetaarray[9][1]]
+          data: [lnetaChart.lnetaarray[0][1], lnetaChart.lnetaarray[1][1], lnetaChart.lnetaarray[2][1], lnetaChart.lnetaarray[3][1], lnetaChart.lnetaarray[4][1], lnetaChart.lnetaarray[5][1], lnetaChart.lnetaarray[6][1], lnetaChart.lnetaarray[7][1], lnetaChart.lnetaarray[8][1], lnetaChart.lnetaarray[9][1], lnetaChart.lnetaarray[10][1]]
         },
         {
           name: '单NB(妖星神天)',
           type: 'bar',
           stack: '类型',
           barWidth: '70%',
-          data: [lnetaChart.lnetaarray[0][2], lnetaChart.lnetaarray[1][2], lnetaChart.lnetaarray[2][2], lnetaChart.lnetaarray[3][2], lnetaChart.lnetaarray[4][2], lnetaChart.lnetaarray[5][2], lnetaChart.lnetaarray[6][2], lnetaChart.lnetaarray[7][2], lnetaChart.lnetaarray[8][2], lnetaChart.lnetaarray[9][2]]
+          data: [lnetaChart.lnetaarray[0][2], lnetaChart.lnetaarray[1][2], lnetaChart.lnetaarray[2][2], lnetaChart.lnetaarray[3][2], lnetaChart.lnetaarray[4][2], lnetaChart.lnetaarray[5][2], lnetaChart.lnetaarray[6][2], lnetaChart.lnetaarray[7][2], lnetaChart.lnetaarray[8][2], lnetaChart.lnetaarray[9][2], lnetaChart.lnetaarray[10][2]]
         },
         {
           name: '单NB(其他)和双NB(妖星神天)',
           type: 'bar',
           stack: '类型',
           barWidth: '70%',
-          data: [lnetaChart.lnetaarray[0][3], lnetaChart.lnetaarray[1][3], lnetaChart.lnetaarray[2][3], lnetaChart.lnetaarray[3][3], lnetaChart.lnetaarray[4][3], lnetaChart.lnetaarray[5][3], lnetaChart.lnetaarray[6][3], lnetaChart.lnetaarray[7][3], lnetaChart.lnetaarray[8][3], lnetaChart.lnetaarray[9][3]]
+          data: [lnetaChart.lnetaarray[0][3], lnetaChart.lnetaarray[1][3], lnetaChart.lnetaarray[2][3], lnetaChart.lnetaarray[3][3], lnetaChart.lnetaarray[4][3], lnetaChart.lnetaarray[5][3], lnetaChart.lnetaarray[6][3], lnetaChart.lnetaarray[7][3], lnetaChart.lnetaarray[8][3], lnetaChart.lnetaarray[9][3], lnetaChart.lnetaarray[10][3]]
         },
         {
           name: 'NMNB(妖星)',
           type: 'bar',
           stack: '类型',
           barWidth: '70%',
-          data: [lnetaChart.lnetaarray[0][4], lnetaChart.lnetaarray[1][4], lnetaChart.lnetaarray[2][4], lnetaChart.lnetaarray[3][4], lnetaChart.lnetaarray[4][4], lnetaChart.lnetaarray[5][4], lnetaChart.lnetaarray[6][4], lnetaChart.lnetaarray[7][4], lnetaChart.lnetaarray[8][4], lnetaChart.lnetaarray[9][4]]
+          data: [lnetaChart.lnetaarray[0][4], lnetaChart.lnetaarray[1][4], lnetaChart.lnetaarray[2][4], lnetaChart.lnetaarray[3][4], lnetaChart.lnetaarray[4][4], lnetaChart.lnetaarray[5][4], lnetaChart.lnetaarray[6][4], lnetaChart.lnetaarray[7][4], lnetaChart.lnetaarray[8][4], lnetaChart.lnetaarray[9][4], lnetaChart.lnetaarray[10][4]]
         },
         {
           name: 'NMNB(其他)和3N',
           type: 'bar',
           stack: '类型',
           barWidth: '70%',
-          data: [lnetaChart.lnetaarray[0][5], lnetaChart.lnetaarray[1][5], lnetaChart.lnetaarray[2][5], lnetaChart.lnetaarray[3][5], lnetaChart.lnetaarray[4][5], lnetaChart.lnetaarray[5][5], lnetaChart.lnetaarray[6][5], lnetaChart.lnetaarray[7][5], lnetaChart.lnetaarray[8][5], lnetaChart.lnetaarray[9][5]]
+          data: [lnetaChart.lnetaarray[0][5], lnetaChart.lnetaarray[1][5], lnetaChart.lnetaarray[2][5], lnetaChart.lnetaarray[3][5], lnetaChart.lnetaarray[4][5], lnetaChart.lnetaarray[5][5], lnetaChart.lnetaarray[6][5], lnetaChart.lnetaarray[7][5], lnetaChart.lnetaarray[8][5], lnetaChart.lnetaarray[9][5], lnetaChart.lnetaarray[10][5]]
         }
       ]
     };
@@ -116,7 +117,7 @@ var lnetaChart = {
       legend: {
         orient: 'vertical',
         left: 'left',
-        data: ['红魔乡', '妖妖梦', '永夜抄', '风神录', '地灵殿', '星莲船', '神灵庙', '辉针城', '绀珠传', '天空璋']
+        data: ['红魔乡', '妖妖梦', '永夜抄', '风神录', '地灵殿', '星莲船', '大战争', '神灵庙', '辉针城', '绀珠传', '天空璋']
       },
       series: [{
         type: 'pie',
@@ -148,18 +149,22 @@ var lnetaChart = {
           },
           {
             value: lnetaChart.sum(lnetaChart.lnetaarray[6]),
-            name: '神灵庙'
+            name: '大战争'
           },
           {
             value: lnetaChart.sum(lnetaChart.lnetaarray[7]),
-            name: '辉针城'
+            name: '神灵庙'
           },
           {
             value: lnetaChart.sum(lnetaChart.lnetaarray[8]),
-            name: '绀珠传'
+            name: '辉针城'
           },
           {
             value: lnetaChart.sum(lnetaChart.lnetaarray[9]),
+            name: '绀珠传'
+          },
+          {
+            value: lnetaChart.sum(lnetaChart.lnetaarray[10]),
             name: '天空璋'
           }
         ],
@@ -255,33 +260,33 @@ var lnetaChart = {
           lnetaChart.lnetaarray[5][0] += 1;
         }
         break;
-      case '神灵庙':
-        if (data.type.indexOf('NMNBNT') != -1) {
+      case '大战争':
+        if (data.type.indexOf('NMNB') != -1) {
           lnetaChart.lnetaarray[6][5] += 1;
-        } else if (data.type.indexOf('NMNB') != -1) {
-          lnetaChart.lnetaarray[6][4] += 1;
-        } else if (data.type.indexOf('NBNT') != -1) {
+        } else if (data.type.indexOf('NB') != -1) {
           lnetaChart.lnetaarray[6][3] += 1;
         } else if (data.type.indexOf('NM') != -1) {
           lnetaChart.lnetaarray[6][1] += 1;
-        } else if (data.type.indexOf('NB') != -1) {
-          lnetaChart.lnetaarray[6][2] += 1;
         } else if (data.type.indexOf('低封') != -1) {
           lnetaChart.lnetaarray[6][0] += 1;
         }
         break;
-      case '辉针城':
-        if (data.type.indexOf('NMNB') != -1) {
+      case '神灵庙':
+        if (data.type.indexOf('NMNBNT') != -1) {
           lnetaChart.lnetaarray[7][5] += 1;
-        } else if (data.type.indexOf('NB') != -1) {
+        } else if (data.type.indexOf('NMNB') != -1) {
+          lnetaChart.lnetaarray[7][4] += 1;
+        } else if (data.type.indexOf('NBNT') != -1) {
           lnetaChart.lnetaarray[7][3] += 1;
         } else if (data.type.indexOf('NM') != -1) {
           lnetaChart.lnetaarray[7][1] += 1;
+        } else if (data.type.indexOf('NB') != -1) {
+          lnetaChart.lnetaarray[7][2] += 1;
         } else if (data.type.indexOf('低封') != -1) {
           lnetaChart.lnetaarray[7][0] += 1;
         }
         break;
-      case '绀珠传':
+      case '辉针城':
         if (data.type.indexOf('NMNB') != -1) {
           lnetaChart.lnetaarray[8][5] += 1;
         } else if (data.type.indexOf('NB') != -1) {
@@ -292,19 +297,30 @@ var lnetaChart = {
           lnetaChart.lnetaarray[8][0] += 1;
         }
         break;
-      case '天空璋':
-        if (data.type.indexOf('NMNBNC') != -1) {
+      case '绀珠传':
+        if (data.type.indexOf('NMNB') != -1) {
           lnetaChart.lnetaarray[9][5] += 1;
-        } else if (data.type.indexOf('NMNB') != -1) {
-          lnetaChart.lnetaarray[9][4] += 1;
-        } else if (data.type.indexOf('NBNC') != -1) {
+        } else if (data.type.indexOf('NB') != -1) {
           lnetaChart.lnetaarray[9][3] += 1;
         } else if (data.type.indexOf('NM') != -1) {
           lnetaChart.lnetaarray[9][1] += 1;
-        } else if (data.type.indexOf('NB') != -1) {
-          lnetaChart.lnetaarray[9][2] += 1;
         } else if (data.type.indexOf('低封') != -1) {
           lnetaChart.lnetaarray[9][0] += 1;
+        }
+        break;
+      case '天空璋':
+        if (data.type.indexOf('NMNBNC') != -1) {
+          lnetaChart.lnetaarray[10][5] += 1;
+        } else if (data.type.indexOf('NMNB') != -1) {
+          lnetaChart.lnetaarray[10][4] += 1;
+        } else if (data.type.indexOf('NBNC') != -1) {
+          lnetaChart.lnetaarray[10][3] += 1;
+        } else if (data.type.indexOf('NM') != -1) {
+          lnetaChart.lnetaarray[10][1] += 1;
+        } else if (data.type.indexOf('NB') != -1) {
+          lnetaChart.lnetaarray[10][2] += 1;
+        } else if (data.type.indexOf('低封') != -1) {
+          lnetaChart.lnetaarray[10][0] += 1;
         }
         break;
       default:
