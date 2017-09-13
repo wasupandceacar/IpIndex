@@ -1,3 +1,11 @@
 .mdl-data-table td {text-align:center}
 
 .mdl-data-table th {text-align:center}
+
+div.container { max-width: 1200px }
+
+div.dataTables_filter {
+    position: absolute;
+    right: 15px;
+    top: 160px;
+}

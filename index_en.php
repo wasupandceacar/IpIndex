@@ -163,6 +163,7 @@ function getCity($ip = '')
 	<address style="float:right;">
 		<a href="rep.php">Collection of my Touhou STG replays</a>
     <a href="lneta.html">Private Collection of Touhou Lnetas in Bilibili</a>
+    <a href="osutable.html">Private Collection of High pps in osu!</a>
 	</address>
 </div>
 <p hidden id="ipid">
