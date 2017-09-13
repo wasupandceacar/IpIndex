@@ -38,7 +38,8 @@ var osutable = {
         'infoEmpty': '没有相关map信息',
         'infoFiltered': ''
       },
-      fixedHeader: true
+      fixedHeader: true,
+      "lengthMenu": [[25, 50, 120, -1], [25, 50, 120, "所有"]]
     });
   }
 }
