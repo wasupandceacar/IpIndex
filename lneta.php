@@ -21,18 +21,13 @@
 
 <body class="nav-md">
   <?php
+  include 'php/functioncollection.php';
   $yourip=getip();
   $datetime = new \DateTime;
   $time=$datetime->format('Y-m-d H:i:s');
 
   //读取
-  $mysql_server_name='138.68.41.21';
-  $mysql_username='root';
-  $mysql_password='1248163264128';
-  $mysql_database='visited_ip';
-  $conn=mysql_connect($mysql_server_name, $mysql_username, $mysql_password) or die("error connecting") ;
-  mysql_query("set names 'utf8'");
-  mysql_select_db($mysql_database);
+  loginToDB('visited_ip');
 
   //查找此ip是否访问
   $sqlexist = "select distinct(ip_id) from lneta_ip_info where ip_address='$yourip'";
@@ -53,22 +48,6 @@
       $sqlwrite = "insert into lneta_ip_info (ip_id, ip_address,time) values ($ipid,'$yourip','$time')";
       mysql_query($sqlwrite);
       mysql_close();
-  }
-
-  function getip()//获取ip
-  {
-      if (getenv("HTTP_CLIENT_IP") && strcasecmp(getenv("HTTP_CLIENT_IP"), "unknown")) {
-          $ip = getenv("HTTP_CLIENT_IP");
-      } elseif (getenv("HTTP_X_FORWARDED_FOR") && strcasecmp(getenv("HTTP_X_FORWARDED_FOR"), "unknown")) {
-          $ip = getenv("HTTP_X_FORWARDED_FOR");
-      } elseif (getenv("REMOTE_ADDR") && strcasecmp(getenv("REMOTE_ADDR"), "unknown")) {
-          $ip = getenv("REMOTE_ADDR");
-      } elseif (isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] && strcasecmp($_SERVER['REMOTE_ADDR'], "unknown")) {
-          $ip = $_SERVER['REMOTE_ADDR'];
-      } else {
-          $ip = "unknown";
-      }
-      return $ip;
   }
   ?>
   <div class="container body">
@@ -129,38 +108,24 @@
       <div style="position: fixed; right: 0; bottom: 0; background-image:url('img/mafuyo.png'); width:19%; height:36%; z-index:-1;">
         <p style="font-size: 12px; position: absolute; left: 170px; top: 79px">总访问：
           <?php
-          //读取
-          $mysql_server_name='138.68.41.21';
-          $mysql_username='root';
-          $mysql_password='1248163264128';
-          $mysql_database='visited_ip';
-          $conn=mysql_connect($mysql_server_name, $mysql_username, $mysql_password) or die("error connecting") ;
-          mysql_query("set names 'utf8'");
-          mysql_select_db($mysql_database);
-
-          //查找此ip是否访问
+          loginToDB('visited_ip');
+          //查询所有访问ip
           $sqlnum = "select * from lneta_ip_info";
           $ipdb = mysql_query($sqlnum);
           $ipnum = mysql_num_rows($ipdb);
           echo $ipnum;
+          mysql_close();
           ?>
         </p>
         <p style="font-size: 12px; position: absolute; left: 170px; top: 97px">今日：
           <?php
-          //读取
-          $mysql_server_name='138.68.41.21';
-          $mysql_username='root';
-          $mysql_password='1248163264128';
-          $mysql_database='visited_ip';
-          $conn=mysql_connect($mysql_server_name, $mysql_username, $mysql_password) or die("error connecting") ;
-          mysql_query("set names 'utf8'");
-          mysql_select_db($mysql_database);
-
-          //查找此ip是否访问
+          loginToDB('visited_ip');
+          //查询今天的ip
           $sqlnum = "select * from lneta_ip_info where to_days(time) = to_days(now())";
           $ipdb = mysql_query($sqlnum);
           $ipnum = mysql_num_rows($ipdb);
           echo $ipnum;
+          mysql_close();
           ?>
         </p>
       </div>

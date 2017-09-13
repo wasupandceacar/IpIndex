@@ -67,6 +67,7 @@
 <body>
 <div style="float:left; font-family:Consolas;">
 <p><?php
+include 'php/functioncollection.php';
 $yourip=getip();
 $ar=getCity($yourip);
 $country=$ar["country"];
@@ -77,13 +78,7 @@ $datetime = new \DateTime;
 $time=$datetime->format('Y-m-d H:i:s');
 
 //读取
-$mysql_server_name='138.68.41.21';
-$mysql_username='root';
-$mysql_password='1248163264128';
-$mysql_database='visited_ip';
-$conn=mysql_connect($mysql_server_name, $mysql_username, $mysql_password) or die("error connecting") ;
-mysql_query("set names 'utf8'");
-mysql_select_db($mysql_database);
+loginToDB('visited_ip');
 
 //查找此ip是否访问
 $sqlexist = "select distinct(ip_id) from ip_info where ip_address='$yourip'";
@@ -112,40 +107,7 @@ echo "Your ip is ".$yourip."</br><br>";
 echo "Come from ".$country."</br></br>";
 echo "Current time ".$time."</br></br>";
 echo "There are ".$ipnum." visitors since I built this site(`・ω・´)";
-
-function getip()//获取ip
-{
-    if (getenv("HTTP_CLIENT_IP") && strcasecmp(getenv("HTTP_CLIENT_IP"), "unknown")) {
-        $ip = getenv("HTTP_CLIENT_IP");
-    } elseif (getenv("HTTP_X_FORWARDED_FOR") && strcasecmp(getenv("HTTP_X_FORWARDED_FOR"), "unknown")) {
-        $ip = getenv("HTTP_X_FORWARDED_FOR");
-    } elseif (getenv("REMOTE_ADDR") && strcasecmp(getenv("REMOTE_ADDR"), "unknown")) {
-        $ip = getenv("REMOTE_ADDR");
-    } elseif (isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] && strcasecmp($_SERVER['REMOTE_ADDR'], "unknown")) {
-        $ip = $_SERVER['REMOTE_ADDR'];
-    } else {
-        $ip = "unknown";
-    }
-    return $ip;
-}
-
-function getCity($ip = '')
-{
-    if ($ip == '') {
-        $url = "http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json";
-        $ip=json_decode(file_get_contents($url), true);
-        $data = $ip;
-    } else {
-        $url="http://ip.taobao.com/service/getIpInfo.php?ip=".$ip;
-        $ip=json_decode(file_get_contents($url));
-        if ((string)$ip->code=='1') {
-            return false;
-        }
-        $data = (array)$ip->data;
-    }
-
-    return $data;
-}?></p>
+?></p>
 <p></br></br></br></br></br></br>
   I haven't decided to do what with this site. But since you find here, </br>
   certainly you know Touhou, as well as ⑨. If you have any idea about what </br>

@@ -1,12 +1,6 @@
 <?php
- //读取
- $mysql_server_name='138.68.41.21';
- $mysql_username='root';
- $mysql_password='1248163264128';
- $mysql_database='cirno';
- $conn=mysql_connect($mysql_server_name, $mysql_username, $mysql_password) or die("error connecting") ;
- mysql_query("set names 'utf8'");
- mysql_select_db($mysql_database);
+ include '../php/functioncollection.php';
+ loginToDB('cirno');
  $id=1;
  $relog="";
  while (1) {

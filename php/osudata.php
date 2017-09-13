@@ -1,11 +1,6 @@
 <?php
-  $mysql_server_name='138.68.41.21';
-  $mysql_username='root';
-  $mysql_password='1248163264128';
-  $mysql_database='osu';
-  $conn=mysql_connect($mysql_server_name, $mysql_username, $mysql_password) or die("error connecting") ;
-  mysql_query("set names 'utf8'");
-  mysql_select_db($mysql_database);
+  include '../php/functioncollection.php';
+  loginToDB('osu');
   $sql = "select * from osu_High_pps order by pp desc";
   $result = mysql_query($sql);
   $arr = array();
@@ -27,4 +22,4 @@
     'data'=>$arr
   );
   echo json_encode($allarr, JSON_UNESCAPED_UNICODE);
-  mysql_close($conn);
+  mysql_close();

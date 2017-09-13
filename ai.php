@@ -60,7 +60,7 @@
     });
     function chat(msg){
       $.ajax({
-        url: "ai/aichat.php",
+        url: "php/aichat.php",
         type: 'POST',
         data: "message="+msg,
         timeout: 7000,
@@ -74,7 +74,7 @@
     }
     function teach(ask,answer){
       $.ajax({
-        url: "ai/aiteach.php",
+        url: "php/aiteach.php",
         type: 'POST',
         data: "ask="+ask+"&answer="+answer,
         timeout: 7000,

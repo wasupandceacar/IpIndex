@@ -1,0 +1,43 @@
+<?php
+function getip()//获取ip
+{
+    if (getenv("HTTP_CLIENT_IP") && strcasecmp(getenv("HTTP_CLIENT_IP"), "unknown")) {
+        $ip = getenv("HTTP_CLIENT_IP");
+    } elseif (getenv("HTTP_X_FORWARDED_FOR") && strcasecmp(getenv("HTTP_X_FORWARDED_FOR"), "unknown")) {
+        $ip = getenv("HTTP_X_FORWARDED_FOR");
+    } elseif (getenv("REMOTE_ADDR") && strcasecmp(getenv("REMOTE_ADDR"), "unknown")) {
+        $ip = getenv("REMOTE_ADDR");
+    } elseif (isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] && strcasecmp($_SERVER['REMOTE_ADDR'], "unknown")) {
+        $ip = $_SERVER['REMOTE_ADDR'];
+    } else {
+        $ip = "unknown";
+    }
+    return $ip;
+}
+
+function getCity($ip = '')
+{
+    if ($ip == '') {
+        $url = "http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json";
+        $ip=json_decode(file_get_contents($url), true);
+        $data = $ip;
+    } else {
+        $url="http://ip.taobao.com/service/getIpInfo.php?ip=".$ip;
+        $ip=json_decode(file_get_contents($url));
+        if ((string)$ip->code=='1') {
+            return false;
+        }
+        $data = (array)$ip->data;
+    }
+
+    return $data;
+}
+
+function loginToDB($mysql_database){
+  $mysql_server_name='138.68.41.21';
+  $mysql_username='root';
+  $mysql_password='1248163264128';
+  $conn=mysql_connect($mysql_server_name, $mysql_username, $mysql_password) or die("error connecting") ;
+  mysql_query("set names 'utf8'");
+  mysql_select_db($mysql_database);
+}?>
