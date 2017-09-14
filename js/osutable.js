@@ -25,7 +25,7 @@ var osutable = {
         'emptyTable': '没有相关map信息',
         'loadingRecords': '加载map信息中...',
         'processing': '查询map中...',
-        'search': '搜索map:',
+        'search': '搜索map或玩家:',
         'lengthMenu': '每页 _MENU_ 个map记录',
         'zeroRecords': '没有相关map信息',
         'paginate': {
