@@ -162,6 +162,15 @@
 		</td>
 	</tr>
 
+	<tr>
+		<td>大战争初通</td>
+		<td>2017/09/14</td>
+		<td>A-1路线。对于猴子过于不友好的游戏，说的就是这个吧</td>
+		<td>
+			<a href="rep/th128_l.rpy">下载链接</a>
+		</td>
+	</tr>
+
 </table>
 
 <div class="pageNavi"><a href="#top">↑Above</a></div>
