@@ -133,6 +133,7 @@
 
     <!-- jQuery -->
     <script src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/webpjs-0.0.2.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
     <script src="js/mytable.js"></script>
