@@ -5,13 +5,6 @@
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-4405187196186225",
-    enable_page_level_ads: true
-  });
-</script>
 <script type="text/javascript">
   $(document).ready(function(){
     $('#sendbutton').on('click', function(e) {
@@ -129,7 +122,7 @@ echo "</br>本站已有".$ipnum."位访问者(`・ω・´)</br></br>";
   <font color="red">中文最多100字</font>
 </p>
 </div>
-<div><img src="img/flandre.jpg" width="720" height="680"/><div>
+<div><img src="img/flandre.webp" width="720" height="680"/><div>
 <div class="footer" style="font-family:Consolas;">
   <a style="float:left;" href="index_en.php">English Page</a>
 	<address style="float:right;">

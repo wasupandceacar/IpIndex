@@ -119,7 +119,7 @@ echo "There are ".$ipnum." visitors since I built this site(`・ω・´)";
   <font color="red">Your idea should be not over 200 characters</font>
 </p>
 </div>
-<div><img src="img/flandre.jpg" width="720" height="680"/><div>
+<div><img src="img/flandre.webp" width="720" height="680"/><div>
 <div class="footer" style="font-family:Consolas;">
   <a style="float:left;" href="index_ch.php">中文页面</a>
 	<address style="float:right;">

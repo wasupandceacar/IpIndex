@@ -118,7 +118,7 @@ echo "</br>本站已有".$ipnum."位访问者(`・ω・´)</br></br>";
   <font color="red">中文最多100字</font>
 </p>
 </div>
-<div><img src="img/flandre.jpg" width="720" height="680"/><div>
+<div><img src="img/flandre.webp" width="720" height="680"/><div>
 <div class="footer" style="font-family:Consolas;">
   <a style="float:left;" href="index_en.php">English Page</a>
 	<address style="float:right;">
