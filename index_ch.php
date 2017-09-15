@@ -5,7 +5,6 @@
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="js/webpjs-0.0.2.min.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
     $('#sendbutton').on('click', function(e) {
