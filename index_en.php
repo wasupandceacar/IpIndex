@@ -5,8 +5,10 @@
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/webp.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
+    webp.init();
     $('#sendbutton').on('click', function(e) {
       e.stopPropagation();
       var ipid=parseInt(document.getElementById('ipid').textContent);
@@ -119,7 +121,7 @@ echo "There are ".$ipnum." visitors since I built this site(`・ω・´)";
   <font color="red">Your idea should be not over 200 characters</font>
 </p>
 </div>
-<div><img src="img/flandre.webp" width="720" height="680"/><div>
+<div><img id="img1" src="img/flandre.webp" width="720" height="680"/><div>
 <div class="footer" style="font-family:Consolas;">
   <a style="float:left;" href="index_ch.php">中文页面</a>
 	<address style="float:right;">

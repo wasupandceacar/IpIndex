@@ -5,8 +5,10 @@
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/webp.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
+    webp.init();
     $('#sendbutton').on('click', function(e) {
       e.stopPropagation();
       var ipid=parseInt(document.getElementById('ipid').textContent);
@@ -122,7 +124,7 @@ echo "</br>本站已有".$ipnum."位访问者(`・ω・´)</br></br>";
   <font color="red">中文最多100字</font>
 </p>
 </div>
-<div><img src="img/flandre.webp" width="720" height="680"/><div>
+<div><img id="img1" src="img/flandre.webp" width="720" height="680"/><div>
 <div class="footer" style="font-family:Consolas;">
   <a style="float:left;" href="index_en.php">English Page</a>
 	<address style="float:right;">

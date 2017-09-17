@@ -16,8 +16,10 @@
   <link rel="stylesheet" href="css/lneta.css">
   <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
   <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/webp.js"></script>
   <script type="text/javascript">
     $(document).ready(function(){
+      webp.init();
       send();
     });
     function send(){
@@ -48,7 +50,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand">
-            <img src="img/logo9.webp" class="img-thumbnail" width="79px">
+            <img id="img1" src="img/logo9.webp" class="img-thumbnail" width="79px">
           </a>
         </div>
         <div class="collapse navbar-collapse" id="coll">

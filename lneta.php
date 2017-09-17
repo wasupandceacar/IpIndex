@@ -60,7 +60,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand">
-            <img src="img/logo9.webp" class="img-thumbnail" width="79px">
+            <img id="img1" src="img/logo9.webp" class="img-thumbnail" width="79px">
           </a>
         </div>
         <div class="collapse navbar-collapse" id="coll">
@@ -105,7 +105,7 @@
           </thead>
         </table>
       </div>
-      <div style="position: fixed; right: 0; bottom: 0; background-image:url('img/mafuyo.webp'); width:19%; height:36%; z-index:-1;">
+      <div id="backimg" style="position: fixed; right: 0; bottom: 0; background-image:url('img/mafuyo.webp'); width:19%; height:36%; z-index:-1;">
         <p style="font-size: 12px; position: absolute; left: 170px; top: 79px">总访问：
           <?php
           loginToDB('visited_ip');
@@ -140,8 +140,10 @@
     <script src="js/mobile.js"></script>
     <script src="js/sticky.js"></script>
     <script src="js/lneta.js"></script>
-    <script>
-      $(document).ready(function() {
+    <script type="text/javascript" src="js/webp.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        webp.init();
         lnetaList.init();
       });
     </script>

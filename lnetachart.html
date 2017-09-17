@@ -29,7 +29,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand">
-            <img src="img/logo9.webp" class="img-thumbnail" width="79px">
+            <img id="img1" src="img/logo9.webp" class="img-thumbnail" width="79px">
           </a>
         </div>
         <div class="collapse navbar-collapse" id="coll">
@@ -70,8 +70,10 @@
   <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdn.bootcss.com/echarts/3.6.2/echarts.min.js"></script>
   <script src="js/lnetachart.js"></script>
-  <script>
-    $(document).ready(function() {
+  <script type="text/javascript" src="js/webp.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      webp.init();
       lnetaChart.init();
     });
   </script>
