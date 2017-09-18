@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <link rel="stylesheet" type="text/css" href="css/index.css" />
+<link href="https://cdn.bootcss.com/toastr.js/latest/toastr.min.css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script src="https://cdn.bootcss.com/toastr.js/latest/toastr.min.js"></script>
 <script type="text/javascript" src="js/webp.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
@@ -18,7 +20,7 @@
       if(msg.gblen()<=200){
         send(time, msg, ipid);
       }else{
-        alert("Too many words. Delete some?")
+        toastr.warning("Too many words. Delete some?");
       }
     });
   });
@@ -29,10 +31,10 @@
       data: "time="+time+"&msg="+msg+"&ipid="+ipid+"&lan=en",
       timeout: 7000,
       error: function () {
-        alert("some error");
+          toastr.error("some error");
       },
       success: function (data) {
-        alert(data);
+          toastr.success(data);
       }
     });
   }

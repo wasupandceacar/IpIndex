@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <link rel="stylesheet" type="text/css" href="css/index.css" />
+<link href="https://cdn.bootcss.com/toastr.js/latest/toastr.min.css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script src="https://cdn.bootcss.com/toastr.js/latest/toastr.min.js"></script>
 <script type="text/javascript" src="js/webp.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
@@ -18,7 +20,7 @@
       if(msg.gblen()<=200){
         send(time, msg, ipid);
       }else{
-        alert("字数过多。删掉一些吧。")
+          toastr.warning('字数过多。删掉一些吧。');
       }
     });
   });
@@ -29,10 +31,10 @@
       data: "time="+time+"&msg="+msg+"&ipid="+ipid+"&lan=ch",
       timeout: 7000,
       error: function () {
-        alert("出现错误");
+          toastr.error('出现错误');
       },
       success: function (data) {
-        alert(data);
+          toastr.success(data);
       }
     });
   }

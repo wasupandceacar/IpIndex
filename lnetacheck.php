@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <link href="https://cdn.bootcss.com/bootstrap-material-design/4.0.2/bootstrap-material-design.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/lnetacheck.css">
+  <link href="https://cdn.bootcss.com/toastr.js/latest/toastr.min.css" rel="stylesheet">
 </head>
 
 <body class="nav-md">
@@ -33,6 +34,7 @@
 
     <!-- jQuery -->
     <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/toastr.js/latest/toastr.min.js"></script>
     <script src="https://cdn.bootcss.com/tether/1.4.0/js/tether.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap-material-design/4.0.2/bootstrap-material-design.iife.min.js"></script>
@@ -46,9 +48,9 @@
           var avid = parseInt(str);
           var msg=$('#reason').val();
           if(str==""){
-            alert("请填写av号！");
+            toastr.warning("请填写av号！");
           }else if(msg==""){
-            alert("请填写理由！");
+              toastr.warning("请填写理由！");
           }else{
             send(avid,msg);
           }
@@ -62,10 +64,10 @@
           data: "avid=" + avid + "&msg=" + msg,
           timeout: 7000,
           error: function() {
-            alert("出现错误");
+              toastr.error("出现错误");
           },
           success: function(data) {
-            alert(data);
+              toastr.success(data);
           }
         });
       }

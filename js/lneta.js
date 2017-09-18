@@ -1,6 +1,10 @@
 var lnetaList = {
   init: function() {
-    lnetaList.initTable();
+      toastr.options.progressBar = true;
+      toastr.options.timeOut = 2000;
+      toastr.info('少女正在加载图表中。。。');
+      lnetaList.initTable();
+      toastr.clear();
   },
   initTable: function() {
     var optionSet = {

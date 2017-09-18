@@ -33,34 +33,34 @@
 }
 
 .img-thumbnail{
-  margin: -20px 0px 0px -15px;
-  max-width: 127%;
+    margin: -20px 0px 0px -15px;
+    max-width: 127%;
 }
 
 .h2title{
-  margin: 4px 0px 2px 2px;
+    margin: 4px 0px 2px 2px;
 }
 
 .btn-default{
-  color: #000;
+    color: #000;
 }
 
 .navbar-default{
-  background-image: linear-gradient(to bottom,#2e0bff 0,#0fe9ff 100%);
+    background-image: linear-gradient(to bottom,#2e0bff 0,#0fe9ff 100%);
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.open>a{
-  background-image: linear-gradient(to bottom,#14ff0f 0,#bdedbd 100%);
+    background-image: linear-gradient(to bottom,#14ff0f 0,#bdedbd 100%);
 }
 
 .navbar-default .navbar-toggle{
-  border-color: #ffffff;
+    border-color: #ffffff;
 }
 
 .navbar-default .navbar-toggle:hover{
-  background-color: #68f666;
+    background-color: #68f666;
 }
 
 .navbar-default .navbar-toggle:focus{
-  background-color: #2e0bff;
+    background-color: #2e0bff;
 }
