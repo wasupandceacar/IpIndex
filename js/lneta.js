@@ -1,7 +1,7 @@
 var lnetaList = {
   init: function() {
       toastr.options.progressBar = true;
-      toastr.options.timeOut = 2000;
+      toastr.options.timeOut = 3000;
       toastr.info('少女正在加载图表中。。。');
       lnetaList.initTable();
       toastr.clear();
@@ -55,7 +55,7 @@ var lnetaList = {
           searchable: false
         }
       ],
-      url: "json/1.json",
+      url: "php/lneta.php",
       method: 'get',
       queryParams: function(params) {
         return params;

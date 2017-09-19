@@ -14,7 +14,7 @@ var lnetaChart = {
             [0, 0, 0, 0, 0, 0]
         ];
         toastr.options.progressBar = true;
-        toastr.options.timeOut = 2000;
+        toastr.options.timeOut = 3000;
         toastr.info('少女正在加载图表中。。。');
         lnetaChart.initData();
         toastr.clear();
@@ -22,10 +22,10 @@ var lnetaChart = {
     initData: function() {
         $.ajax({
             type: "GET",
-            url: "json/1.json",
+            url: "php/lneta.php",
             success: function(data) {
                 //单低封，单NM，单NB(妖星神天)，单NB(其他)和双NB(妖星神天)，NMNB(妖神)，NMNB(其他)和3N
-                $.each(data, function(n, value) {
+                $.each($.parseJSON(data), function(n, value) {
                     lnetaChart.judge(value);
                 });
                 lnetaChart.initPie();
