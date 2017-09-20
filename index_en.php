@@ -3,6 +3,9 @@
 <link rel = "shortcut icon" href="9.ico">
 <meta charset="UTF-8">
 <meta http-equiv="Content-Style-Type" content="text/css" />
+
+<title>琪露诺和大酱的小屋</title>
+
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <link href="https://cdn.bootcss.com/toastr.js/latest/toastr.min.css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
