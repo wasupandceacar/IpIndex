@@ -6,7 +6,7 @@
 
 <meta name="keywords" content="东方,Lneta,osu!,统计">
 
-<meta name="description" content="站点的内容暂时包括：个人的东方rep合集、B站东方Lneta的统计数据，osu!高分pp成绩统计数据">
+<meta name="description" content="站点的内容暂时包括：个人的东方rep合集、B站东方Lneta的统计数据、osu!高分pp成绩统计数据">
 
 <meta name="author" content="wasupandceacar">
 
