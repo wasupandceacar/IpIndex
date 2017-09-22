@@ -33,11 +33,28 @@ function getCity($ip = '')
     return $data;
 }
 
-function loginToDB($mysql_database){
-  $mysql_server_name='138.68.41.21';
-  $mysql_username='root';
-  $mysql_password='1248163264128';
-  $conn=mysql_connect($mysql_server_name, $mysql_username, $mysql_password) or die("error connecting") ;
-  mysql_query("set names 'utf8'");
-  mysql_select_db($mysql_database);
+function loginToDB($mysql_database)
+{
+    $mysql_server_name = '138.68.41.21';
+    $mysql_username = 'root';
+    $mysql_password = '1248163264128';
+    $conn = mysql_connect($mysql_server_name, $mysql_username, $mysql_password) or die("error connecting");
+    mysql_query("set names 'utf8'");
+    mysql_select_db($mysql_database);
+}
+
+function getFileSize($url){
+    $fCont = file_get_contents($url);
+    $B=strlen($fCont);
+    if($B<1024){
+        return $B."B";
+    }else{
+        $KB=round($B/1024,2);
+        if($KB<1024){
+            return $KB."KB";
+        }else{
+            $MB=round($KB/1024,2);
+            return $MB."MB";
+        }
+    }
 }?>

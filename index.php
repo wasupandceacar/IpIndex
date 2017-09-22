@@ -135,14 +135,14 @@ echo "</br>本站已有".$ipnum."位访问者(`・ω・´)</br></br>";
   <font color="red">中文最多100字</font>
 </p>
 </div>
-<div><img id="img1" src="img/flandre.webp" width="720" height="680"/><div>
+<div>
+<img id="img1" src="img/flandre.webp" width="720" height="680"/></div>
 <div class="footer" style="font-family:Consolas;">
   <a style="float:left;" href="index_en.php">English Page</a>
-	<address style="float:right;">
-		<a href="rep.php">个人的东方rep馆</a>
+  <address style="float:right;"><a href="rep.php">个人的东方rep馆</a>
     <a href="lneta.html">私人B站东方Lneta统计馆</a>
     <a href="osutable.html">私人osu!高分统计馆</a>
-	</address>
+  </address>
 </div>
 <p hidden id="ipid">
 <?php

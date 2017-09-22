@@ -48,6 +48,12 @@
       //写入数据库
       $sqlwrite = "insert into lneta_ip_info (ip_id, ip_address,time) values ($ipid,'$yourip','$time')";
       mysql_query($sqlwrite);
+      $sqlnum = "select * from lneta_ip_info";
+      $ipdb = mysql_query($sqlnum);
+      $ipnum = mysql_num_rows($ipdb);
+      $sqlnum = "select * from lneta_ip_info where to_days(time) = to_days(now())";
+      $ipdb = mysql_query($sqlnum);
+      $nowipnum = mysql_num_rows($ipdb);
       mysql_close();
   }
   ?>
@@ -109,24 +115,12 @@
       <div id="backimg" style="position: fixed; right: 0; bottom: 0; background-image:url('img/mafuyo.webp'); width:19%; height:36%; z-index:-1;">
         <p style="font-size: 12px; position: absolute; left: 170px; top: 79px">总访问：
           <?php
-          loginToDB('visited_ip');
-          //查询所有访问ip
-          $sqlnum = "select * from lneta_ip_info";
-          $ipdb = mysql_query($sqlnum);
-          $ipnum = mysql_num_rows($ipdb);
           echo $ipnum;
-          mysql_close();
           ?>
         </p>
         <p style="font-size: 12px; position: absolute; left: 170px; top: 97px">今日：
           <?php
-          loginToDB('visited_ip');
-          //查询今天的ip
-          $sqlnum = "select * from lneta_ip_info where to_days(time) = to_days(now())";
-          $ipdb = mysql_query($sqlnum);
-          $ipnum = mysql_num_rows($ipdb);
-          echo $ipnum;
-          mysql_close();
+            echo $nowipnum;
           ?>
         </p>
       </div>
