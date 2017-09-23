@@ -57,7 +57,7 @@
 
     <div style="font-weight:bold;padding-bottom:5px">下载：</div>
     <?php
-    echo "<a href='tools/".$url."'>".$url."</a>";
+    echo "<a href='tools/".urlencode($url)."'>".$url."</a>";
     ?></br></br>
 
 </div>

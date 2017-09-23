@@ -35,10 +35,10 @@ function getCity($ip = '')
 
 function loginToDB($mysql_database)
 {
-    $mysql_server_name = '138.68.41.21';
+    $mysql_server_name = 'localhost';
     $mysql_username = 'root';
     $mysql_password = '1248163264128';
-    $conn = mysql_connect($mysql_server_name, $mysql_username, $mysql_password) or die("error connecting");
+    $conn = mysql_connect($mysql_server_name, $mysql_username, $mysql_password) or die("连接错误");
     mysql_query("set names 'utf8'");
     mysql_select_db($mysql_database);
 }
