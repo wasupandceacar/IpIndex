@@ -132,6 +132,7 @@ echo "</br>本站已有".$ipnum."位访问者(`・ω・´)</br></br>";
 		<a href="rep.php">个人的东方rep馆</a>
     <a href="lneta.html">私人B站东方Lneta统计馆</a>
     <a href="osutable.html">私人osu!高分统计馆</a>
+        <a href="alltools.php">个人自制工具</a>
 	</address>
 </div>
 <p hidden id="ipid">

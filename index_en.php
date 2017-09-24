@@ -133,6 +133,7 @@ echo "There are ".$ipnum." visitors since I built this site(`・ω・´)";
 		<a href="rep.php">Collection of my Touhou STG replays</a>
     <a href="lneta.html">Private Collection of Touhou Lnetas in Bilibili</a>
     <a href="osutable.html">Private Collection of High pps in osu!</a>
+        <a href="alltools.php">My DIY Tools</a>
 	</address>
 </div>
 <p hidden id="ipid">
