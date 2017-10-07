@@ -8,7 +8,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="cache-control" content="max-age=1800">
 
   <title>Lneta馆</title>
 
