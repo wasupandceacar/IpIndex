@@ -9,11 +9,11 @@ var lnetaList = {
   initTable: function() {
     var optionSet = {
       dataType: "json",
+      classes: 'table-no-bordered',
       pagination: true,
       pageNumber: 1,
       pageSize: 25,
       search: true,
-      striped: true,
       cache: true,
       sidePagination: "client",
       sortName: 'av',
@@ -55,7 +55,7 @@ var lnetaList = {
           searchable: false
         }
       ],
-      url: "/get_list",
+      url: "php/lneta.php",
       method: 'get',
       queryParams: function(params) {
         return params;

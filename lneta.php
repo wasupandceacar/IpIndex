@@ -1,26 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="no-js no-svg">
 <head>
-  <link rel="shortcut icon" href="9.ico">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <!-- Meta, title, CSS, favicons, etc. -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript">
+function browserRedirect() {
+var sUserAgent= navigator.userAgent.toLowerCase();
+var bIsIpad= sUserAgent.match(/ipad/i) == "ipad";
+var bIsIphoneOs= sUserAgent.match(/iphone os/i) == "iphone os";
+var bIsMidp= sUserAgent.match(/midp/i) == "midp";
+var bIsUc7= sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+var bIsUc= sUserAgent.match(/ucweb/i) == "ucweb";
+var bIsAndroid= sUserAgent.match(/android/i) == "android";
+var bIsCE= sUserAgent.match(/windows ce/i) == "windows ce";
+var bIsWM= sUserAgent.match(/windows mobile/i) == "windows mobile";
+if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+window.location.href= 'oldlneta.php';
+} 
+}
+browserRedirect();
+</script>
+<link rel="shortcut icon" href="9.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=750">
+<meta name="format-detection" content="telephone=no">
 
-  <title>Lneta馆</title>
-
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link href="https://cdn.bootcss.com/toastr.js/latest/toastr.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
-  <link rel="stylesheet" href="css/lneta.min.css">
-  <base target="_blank">
+<!-- Web Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,300,400,700" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@2.0.0/dist/css/yakuhanjp.min.css">
+<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>lneta新馆</title>
+<link rel='stylesheet' id='reset-css-css'  href='css/reset.css' type='text/css' media='all' />
+<link rel='stylesheet' id='common-css-css'  href='css/common.css' type='text/css' media='all' />
+<link rel='stylesheet' id='story-css-css'  href='css/story.css' type='text/css' media='all' />
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link href="https://cdn.bootcss.com/toastr.js/latest/toastr.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
+<link rel="stylesheet" href="css/newlneta.min.css">
+<script type='text/javascript' src='js/jquery-3.2.1.min.js'></script>
+<script type='text/javascript' src='js/jquery-migrate.min.js'></script>
 </head>
 
-<body class="nav-md">
-  <?php
+<body class="archive post-type-archive post-type-archive-story hfeed has-header-image page-two-column colors-light">
+	<?php
   include 'php/functioncollection.php';
   $yourip=getip();
   $datetime = new \DateTime;
@@ -56,40 +79,41 @@
       mysql_close();
   }
   ?>
-  <div class="container body">
-    <div class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#coll">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand">
-            <img id="img1" src="img/logo9.webp" class="img-thumbnail" width="79px">
-          </a>
+<div id="bg_can"></div>
+<div id="page" class="site">
+	<header id="header_sub" role="banner">
+		<div class="navigation-top">
+            <h1 class="pc" id="top_pic"></h1>
+            <div class="pc pickup_news noto_l"><div class="line"><span id="date_span" class="txt"></span><div class="bg"></div></div>
+<div class="line"><span id="neta_span" class="txt"></span><div class="bg"></div></div></div>
+			<ul class="hdr_menu">
+                <li class=" menu-item menu-item-type-post_type menu-item-object-page hvr_anim"><a href="lneta.php"><p class="ja">统计表格</p><p class="en">table</p></a></li>
+  			    <li class=" menu-item menu-item-type-post_type menu-item-object-page hvr_anim"><a href="lnetachart.html"><p class="ja">统计图形</p><p class="en">graph</p></a><div class="line"></div></li>
+                <li class=" menu-item menu-item-type-post_type menu-item-object-page hvr_anim"><a href="updatelog.html"><p class="ja">更新日志</p><p class="en">update log</p></a><div class="line"></div></li>			</ul>
+		</div><!-- .navigation-top -->
+    
+		<div class="sns">
+            <div class="wrpr">
+                <h4 class="poppin_300">LINKS</h4>
+                <hr />
+                <ul>
+                    <li><a href="lnetacheck.php">lneta收录纠错</a></li>
+                    <li><a href="donationrank.html">捐赠榜</a></li>
+                    <li><a href="alipay.html">捐赠1元</a></li>
+                    <li><a href="alipay5.html">捐赠5元</a></li>
+                    <li><a href="alipay25.html">捐赠25元</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="collapse navbar-collapse" id="coll">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="lneta.html" target="_self">统计表格</a></li>
-            <li><a href="lnetachart.html" target="_self">统计图形</a></li>
-            <li><a href="updatalog.php" target="_self">维护日志</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="main_container">
-      <div class="title">
-        <center>
-          <h2 class="h2title">B站Lneta统计站</h2></center>
-      </div>
-      <div class="subtitle">
-        <center>
-          <h4>感谢南大东方群（210085479）的小伙伴们和其他圈内好友的支持和援助。如果你发现未收录的视频或者已收录的视频信息错误，请点<a href="lnetacheck.php">这里</a></h4></center>
-          <h4>&nbsp;&nbsp;注：仅仅不依靠作品系统而无NM或NB或低封等的，将不被计入在内</h4>
-          <h4>&nbsp;&nbsp;统计站捐赠链接加二维码入口（啊啊啊服务器要没钱了）：<a href="alipay.html">1元笑脸迎人</a>&nbsp;&nbsp;<a href="alipay5.html">5元茶水伺候</a>&nbsp;&nbsp;<a href="alipay25.html">25元随意S</a><a style="display:block;text-align:right;" href="donationrank.html">捐赠榜</a></h4>
-      </div>
-      <div class="table-responsive" data-filter-control="true">
+        	</header><!-- #masthead -->
+    <div id="menu_btn" class="sp"><a href="#"><span></span><span></span><span></span></a></div>
+
+	<div id="content" class="in-site-content">
+
+<div class="wrap">
+	<header class="page-header">
+		<div class="title_area">
+      <div class="table-responsive" style="width:90%" data-filter-control="true">
         <table class="table" id="lneta-list">
           <colgroup>
             <col style="width:10%">
@@ -97,7 +121,7 @@
             <col style="width:15%">
             <col style="width:15%">
             <col style="width:15%">
-            <col style="width:30%">
+            <col style="width:500px">
           </colgroup>
           <thead>
             <tr>
@@ -111,38 +135,53 @@
           </thead>
         </table>
       </div>
-      <div id="backimg" style="position: fixed; right: 0; bottom: 0; background-image:url('img/mafuyo.webp'); width:19%; height:36%; z-index:-1;">
-        <p style="font-size: 12px; position: absolute; left: 170px; top: 79px">总访问：
+		</div>
+	</header>
+	<div id="btn_cat_open" class="open sp btn_category poppin_n">category<p class="point"><img src="http://never-island.com/cms/wp-content/themes/island/images/news_sp/tri.png" width="15" height="13" /></p><a href="#"></a></div>
+
+	<div id="btn_cat_close" class="sp btn_category poppin_n">close<p class="point"><img src="http://never-island.com/cms/wp-content/themes/island/images/news_sp/close.png" width="17" height="18" /></p><a href="#"></a></div>
+</div><!-- .wrap -->
+
+
+	</div><!-- #content -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<hr class="pc" /><hr class="pc" /><hr class="pc" />
+		<div class="wrpr">
+			<div id="to_top" class="pc"><a href="#top"><div class="icon"><img class="def" src="http://never-island.com/cms/wp-content/themes/island/images/common/to_top.png" alt="page top" width="73" height="70" /><img class="pc hvr" src="http://never-island.com/cms/wp-content/themes/island/images/common/to_top_hvr.png" alt="page top" width="73" height="70" /></div></a></div>
+		</div><!-- .wrap -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+<script type='text/javascript' src='js/jquery.easing.js'></script>
+<script type='text/javascript' src='js/pixi.min.js'></script>
+<script type='text/javascript' src='js/background.js'></script>
+<script type='text/javascript' src='js/common.js'></script>
+<script type='text/javascript' src='js/story.js'></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+<script src="https://cdn.bootcss.com/toastr.js/latest/toastr.min.js"></script>
+<script type='text/javascript' src='js/newmytable.js'></script>
+<script type='text/javascript' src='js/mobile.js'></script>
+<script type='text/javascript' src='js/filter.js'></script>
+<script type='text/javascript' src='js/sticky.js'></script>
+<script type='text/javascript' src='js/newlneta.js'></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        lnetaList.init();
+      });
+    </script>
+          <div id="backimg" style="position: fixed; left: 0; bottom: 0; background-image:url('img/rmafuyo.png'); width:15%; height:27%; z-index:0;">
+        <p style="font-size: 12px; position: absolute; left: 20px; top: 17px">总访问：
           <?php
           echo $ipnum;
           ?>
         </p>
-        <p style="font-size: 12px; position: absolute; left: 170px; top: 97px">今日：
+        <p style="font-size: 12px; position: absolute; left: 20px; top: 36px">今日：
           <?php
             echo $nowipnum;
           ?>
         </p>
       </div>
-    </div>
-
-    <!-- jQuery -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
-    <script src="https://cdn.bootcss.com/toastr.js/latest/toastr.min.js"></script>
-    <script src="js/mytable.js"></script>
-    <script src="js/filter.js"></script>
-    <script src="js/mobile.js"></script>
-    <script src="js/sticky.js"></script>
-    <script src="js/lneta.js"></script>
-    <script type="text/javascript" src="js/webp.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-        webp.init();
-        lnetaList.init();
-      });
-    </script>
 
 </body>
-
 </html>
