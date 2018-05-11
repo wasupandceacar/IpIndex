@@ -31,7 +31,7 @@
         <div class="navigation-top">
             <h1 class="pc" id="top_pic"></h1>
             <div class="pc pickup_news noto_l"><div class="line"><span id="date_span" class="txt"></span><div class="bg"></div></div>
-                <div class="line"><span id="neta_span" class="txt"></span><div class="bg"></div></div></div>
+                <div onclick="javascript:location='chickenrank.html'" class="line"><span id="neta_span" class="txt"></span><div class="bg"></div></div></div>
             <ul class="hdr_menu"></ul>
         </div><!-- .navigation-top -->
 
