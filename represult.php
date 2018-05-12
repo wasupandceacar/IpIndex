@@ -20,6 +20,7 @@
     <link href="https://cdn.bootcss.com/toastr.js/latest/toastr.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="css/repupload.min.css">
+    <link rel="stylesheet" href="css/represult.css">
     <script type='text/javascript' src='js/jquery-3.2.1.min.js'></script>
     <script type='text/javascript' src='js/jquery-migrate.min.js'></script>
 </head>
@@ -55,6 +56,64 @@
 
         <div class="wrap">
 
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse"
+                               href="#collapseOne">
+                                rep基本信息
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body" id="baseinfo">
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a id="level1_num" data-toggle="collapse"
+                               href="#collapseTwo">
+                                单帧Level-1
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body" id="level1">
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a id="level2_num" data-toggle="collapse"
+                               href="#collapseThree">
+                                单帧Level-2
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body" id="level2">
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a id="level3_num" data-toggle="collapse"
+                               href="#collapseFour">
+                                单帧Level-3
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse">
+                        <div class="panel-body" id="level3">
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div id="btn_cat_open" class="open sp btn_category poppin_n">category<p class="point"><img src="http://never-island.com/cms/wp-content/themes/island/images/news_sp/tri.png" width="15" height="13" /></p><a href="#"></a></div>
 
             <div id="btn_cat_close" class="sp btn_category poppin_n">close<p class="point"><img src="http://never-island.com/cms/wp-content/themes/island/images/news_sp/close.png" width="17" height="18" /></p><a href="#"></a></div>
@@ -77,14 +136,38 @@
 <script type='text/javascript' src='js/story.js'></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdn.bootcss.com/toastr.js/latest/toastr.min.js"></script>
-<script type='text/javascript' src='js/repupload.js'></script>
 <script type="text/javascript">
     $(document).ready(function(){
-        alert("<?php
-        echo $_GET['rep'];
-?>
-");
+        get_rep_info();
     });
+    function get_rep_info(){
+        $.ajax({
+            url: "php/represult.php",
+            type: 'POST',
+            data: {'rpy':"<?php
+                echo $_GET['rep'];
+                ?>
+                "},
+            timeout: 7000,
+            error: function () {
+                toastr.error("发生错误");
+            },
+            success: function (data) {
+                var j=JSON.parse(data)[0];
+                if(j.result=="success"){
+                    $("#baseinfo").html(j.base_info);
+                    $("#level1_num").html("单帧Level-1（"+j.level1_num+"个）");
+                    $("#level1").html(j.level1);
+                    $("#level2_num").html("单帧Level-2（"+j.level2_num+"个）");
+                    $("#level2").html(j.level2);
+                    $("#level3_num").html("单帧Level-3（"+j.level3_num+"个）");
+                    $("#level3").html(j.level3);
+                }else {
+                    toastr.error("载入rep失败，请退回重试");
+                }
+            }
+        });
+    }
 </script>
 
 </body>
