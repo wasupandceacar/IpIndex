@@ -155,7 +155,11 @@
             success: function (data) {
                 var j=JSON.parse(data)[0];
                 if(j.result=="success"){
-                    $("#baseinfo").html(j.base_info);
+                    if(j.error_num!=0){
+                        $("#baseinfo").html(j.base_info+"存在错误："+j.error);
+                    }else{
+                        $("#baseinfo").html(j.base_info);
+                    }
                     $("#level1_num").html("单帧Level-1（"+j.level1_num+"个）");
                     $("#level1").html(j.level1);
                     $("#level2_num").html("单帧Level-2（"+j.level2_num+"个）");
