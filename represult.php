@@ -207,7 +207,7 @@
                 i.name = "csv";
                 f.action = "php/csv/<?php
                 echo substr($_GET['rep'], 0, -4);
-                ?>.csv";  
+                ?>.csv";
                 f.submit();
             }else {
                 toastr.error("载入rep失败，请退回重试");
