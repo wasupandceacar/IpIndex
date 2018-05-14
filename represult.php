@@ -50,7 +50,6 @@
             </div>
         </div>
     </header><!-- #masthead -->
-    <div id="menu_btn" class="sp"><a href="#"><span></span><span></span><span></span></a></div>
 
     <div id="content" class="in-site-content">
 
@@ -124,9 +123,6 @@
                     </div>
                 </div>
             </div>
-            <div id="btn_cat_open" class="open sp btn_category poppin_n">category<p class="point"><img src="http://never-island.com/cms/wp-content/themes/island/images/news_sp/tri.png" width="15" height="13" /></p><a href="#"></a></div>
-
-            <div id="btn_cat_close" class="sp btn_category poppin_n">close<p class="point"><img src="http://never-island.com/cms/wp-content/themes/island/images/news_sp/close.png" width="17" height="18" /></p><a href="#"></a></div>
         </div><!-- .wrap -->
 
 
