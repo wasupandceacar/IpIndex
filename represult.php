@@ -113,6 +113,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a id="dl" data-toggle="collapse"
+                               onclick="downloadcsv();">
+                                csv下载
+                            </a>
+                        </h4>
+                    </div>
+                </div>
             </div>
             <div id="btn_cat_open" class="open sp btn_category poppin_n">category<p class="point"><img src="http://never-island.com/cms/wp-content/themes/island/images/news_sp/tri.png" width="15" height="13" /></p><a href="#"></a></div>
 
@@ -171,6 +181,39 @@
                 }
             }
         });
+    }
+    function downloadcsv() {
+        toastr.info("少女生成csv中。。。");
+        $.ajax({
+            url: "php/dl.php",
+            type: 'POST',
+            data: {'rpy':"<?php
+                echo $_GET['rep'];
+                ?>
+                "},
+                timeout: 7000,
+            error: function () {
+            toastr.error("发生错误");
+        },
+        success: function (data) {
+            var j=JSON.parse(data)[0];
+            if(j.result=="success"){
+                var f = document.createElement("form");
+                document.body.appendChild(f);
+                var i = document.createElement("input");
+                i.type = "hidden";
+                f.appendChild(i);
+                i.value = "5";
+                i.name = "csv";
+                f.action = "php/csv/<?php
+                echo substr($_GET['rep'], 0, -4);
+                ?>.csv";  
+                f.submit();
+            }else {
+                toastr.error("载入rep失败，请退回重试");
+            }
+        }
+    });
     }
 </script>
 
