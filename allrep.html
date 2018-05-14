@@ -17,7 +17,7 @@
         /**
          * 半径，画布宽度，画布高度，画布x内边距，画布y内边距
          */
-        var R = 26, canvasWidth = 400, canvasHeight = 320, OffsetX = 30, OffsetY = 30;
+        var R = 26, canvasWidth = 360, canvasHeight = 360, OffsetX = 30, OffsetY = 30;
         var circleArr = [];
         function createCirclePoint(diffX, diffY) {
             for (var row = 0; row < 3; row++) {
@@ -33,7 +33,7 @@
         }
         window.onload = function () {
             var canvas = document.getElementById("lockCanvas");
-            canvasWidth = document.body.offsetWidth;//网页可见区域宽
+            canvasWidth = 360;//网页可见区域宽
             canvas.width = canvasWidth;
             canvas.height = canvasHeight;
             var cxt = canvas.getContext("2d");
