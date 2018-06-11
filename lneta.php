@@ -112,6 +112,7 @@ browserRedirect();
 
 <div class="wrap">
 	<header class="page-header">
+	<div style="text-align:left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注：仅仅不依靠作品系统而无NM或NB或低封等的，将不被计入在内。&nbsp;&nbsp;UZ的两个疑似作弊视频仅仅因全面性而收录。</div>
 		<div class="title_area">
       <div class="table-responsive" style="width:90%" data-filter-control="true">
         <table class="table" id="lneta-list">
