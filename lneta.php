@@ -112,7 +112,8 @@ browserRedirect();
 
 <div class="wrap">
 	<header class="page-header">
-	<div style="text-align:left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注：仅仅不依靠作品系统而无NM或NB或低封等的，将不被计入在内。&nbsp;&nbsp;UZ的两个疑似作弊视频仅仅因全面性而收录。</div>
+	<div style="text-align:left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注：仅仅不依靠作品系统而无NM或NB或低封等的，将不被计入在内。&nbsp;&nbsp;UZ的两个疑似作弊视频仅仅因全面性而收录。</br>
+	<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宣一波圣的飞机论坛，欢迎飞机党去玩&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.isndes.com/">甜品站</a></b></div>
 		<div class="title_area">
       <div class="table-responsive" style="width:90%" data-filter-control="true">
         <table class="table" id="lneta-list">
