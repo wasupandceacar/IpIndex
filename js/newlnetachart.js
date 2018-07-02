@@ -24,7 +24,7 @@ var lnetaChart = {
             type: "GET",
             url: "php/lneta.php",
             success: function(data) {
-                //单低封，单NM，单NB(妖星神天)，单NB(其他)和双NB(妖星神天)，NMNB(妖神)，NMNB(其他)和3N
+                //单低封，单NM，单NB(妖星神天)，单NB(其他)和双NB(妖星神天)，NMNB(妖星神天)，NMNB(其他)和3N
                 $.each($.parseJSON(data), function(n, value) {
                     lnetaChart.judge(value);
                 });
@@ -48,7 +48,7 @@ var lnetaChart = {
             },
             backgroundColor:'',
             legend: {
-                data: ['单低封', '单NM', '单NB(妖星神天)', '单NB(其他)和双NB(妖星神天)', 'NMNB(妖星)', 'NMNB(其他)和3N']
+                data: ['单低封', '单NM', '单NB(妖星神天)', '单NB(其他)和双NB(妖星神天)', 'NMNB(妖星神天)', 'NMNB(其他)和3N']
             },
             grid: {
                 left: '3%',
@@ -92,7 +92,7 @@ var lnetaChart = {
                     data: [lnetaChart.lnetaarray[0][3], lnetaChart.lnetaarray[1][3], lnetaChart.lnetaarray[2][3], lnetaChart.lnetaarray[3][3], lnetaChart.lnetaarray[4][3], lnetaChart.lnetaarray[5][3], lnetaChart.lnetaarray[6][3], lnetaChart.lnetaarray[7][3], lnetaChart.lnetaarray[8][3], lnetaChart.lnetaarray[9][3], lnetaChart.lnetaarray[10][3]]
                 },
                 {
-                    name: 'NMNB(妖星)',
+                    name: 'NMNB(妖星神天)',
                     type: 'bar',
                     stack: '类型',
                     barWidth: '70%',
