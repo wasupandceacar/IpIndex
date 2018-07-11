@@ -94,7 +94,7 @@ if len(sys.argv)<2:
 else:
     file="rep/"+sys.argv[1]
     tr=THReplay(file)
-    print(tr.getBaseInfo())
+    print(tr.getBaseInfo().replace('\n', '</br>'))
     score_str=""
     for s in tr.getStageScore():
         score_str+=str(s)+"&nbsp;&nbsp;&nbsp;"
