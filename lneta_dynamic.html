@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js no-svg">
+<head>
+    <link rel="shortcut icon" href="9.ico">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=750">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Web Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@2.0.0/dist/css/yakuhanjp.min.css">
+    <script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+    <title>lneta可视化</title>
+    <link rel='stylesheet' id='reset-css-css'  href='css/reset.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='common-css-css'  href='css/common.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='story-css-css'  href='css/story.css' type='text/css' media='all' />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://cdn.bootcss.com/toastr.js/latest/toastr.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/newlneta.min.css">
+    <script type='text/javascript' src='js/jquery-3.2.1.min.js'></script>
+    <script type='text/javascript' src='js/jquery-migrate.min.js'></script>
+</head>
+
+<body class="archive post-type-archive post-type-archive-story hfeed has-header-image page-two-column colors-light">
+<div id="page" class="site">
+
+    <div id="content" class="in-site-content" style="margin-left: 100px; margin-right: 100px;">
+
+        <div class="wrap">
+
+            <header class="page-header">
+                <div class="title_area">
+                    <div class="panel panel-default">
+                        <div id="head2" class="panel-heading">
+                            <h4 class="panel-title">
+                                各作neta细化
+                            </h4>
+                        </div>
+                        <div class="panel-body">
+                            <div id="lneta-chart" style="width: 100%;height:600px"></div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div id="btn_cat_open" class="open sp btn_category poppin_n">category<p class="point"><img src="http://never-island.com/cms/wp-content/themes/island/images/news_sp/tri.png" width="15" height="13" /></p><a href="#"></a></div>
+
+            <div id="btn_cat_close" class="sp btn_category poppin_n">close<p class="point"><img src="http://never-island.com/cms/wp-content/themes/island/images/news_sp/close.png" width="17" height="18" /></p><a href="#"></a></div>
+        </div><!-- .wrap -->
+
+
+    </div><!-- #content -->
+</div><!-- #page -->
+<script type='text/javascript' src='js/jquery.easing.js'></script>
+<script type='text/javascript' src='js/pixi.min.js'></script>
+<script type='text/javascript' src='js/story.js'></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/toastr.js/latest/toastr.min.js"></script>
+<script src="https://cdn.bootcss.com/echarts/3.6.2/echarts.min.js"></script>
+<script type='text/javascript' src='js/lnetadynamic.js'></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        lnetaChart.init();
+    });
+</script>
+
+</body>
+</html>
