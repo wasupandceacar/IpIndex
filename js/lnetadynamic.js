@@ -31,7 +31,7 @@ var lnetaChart = {
                     while(now.getTime()>=start.getTime() && now.getTime()<end.getTime()) {
                         lnetaChart.judge(data[index]);
                         index++;
-                        now = new Date(data[index].time);;
+                        now = new Date(data[index].time);
                     }
                     start = lnetaChart.addDate(start);
                     end = lnetaChart.addDate(start);
@@ -39,6 +39,9 @@ var lnetaChart = {
                 }, 3000);
             }
         });
+    },
+    sleep: function (ms){
+        for(var t = Date.now();Date.now() - t <= ms;);
     },
     addDate: function(date){
         var d=new Date();
@@ -66,7 +69,7 @@ var lnetaChart = {
             lnetaChart.Chart.resize();
         };
         lnetaChart.option = {
-            color: ['#4c5ceb', '#ddf428', '#29df0b', '#dea35c', '#ff0000', '#a20c0c'],
+            color: ['#4c5ceb', '#0a5c01', '#29df0b', '#dea35c', '#ff0000', '#a20c0c'],
             tooltip: {
                 trigger: 'axis',
                 axisPointer: { // 坐标轴指示器，坐标轴触发有效
@@ -160,42 +163,120 @@ var lnetaChart = {
                 type: 'bar',
                 stack: '类型',
                 barWidth: '70%',
-                data: lnetaChart.sortdata(xa, 0)
+                data: lnetaChart.sortdata(xa, 0),
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'inside',
+                        formatter: function(params) {
+                            if(params.value==0){
+                                return "";
+                            }
+                        },
+                        textBorderColor: '#000',
+                        textBorderWidth: 20
+                    }
+                }
             },
                 {
                     name: '单NM',
                     type: 'bar',
                     stack: '类型',
                     barWidth: '70%',
-                    data: lnetaChart.sortdata(xa, 1)
+                    data: lnetaChart.sortdata(xa, 1),
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside',
+                            formatter: function(params) {
+                                if(params.value==0){
+                                    return "";
+                                }
+                            },
+                            textBorderColor: '#000',
+                            textBorderWidth: 20
+                        }
+                    }
                 },
                 {
                     name: '单NB(妖星神天)',
                     type: 'bar',
                     stack: '类型',
                     barWidth: '70%',
-                    data: lnetaChart.sortdata(xa, 2)
+                    data: lnetaChart.sortdata(xa, 2),
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside',
+                            formatter: function(params) {
+                                if(params.value==0){
+                                    return "";
+                                }
+                            },
+                            textBorderColor: '#000',
+                            textBorderWidth: 20
+                        }
+                    }
                 },
                 {
                     name: '单NB(其他)和双NB(妖星神天)',
                     type: 'bar',
                     stack: '类型',
                     barWidth: '70%',
-                    data: lnetaChart.sortdata(xa, 3)
+                    data: lnetaChart.sortdata(xa, 3),
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside',
+                            formatter: function(params) {
+                                if(params.value==0){
+                                    return "";
+                                }
+                            },
+                            textBorderColor: '#000',
+                            textBorderWidth: 20
+                        }
+                    }
                 },
                 {
                     name: 'NMNB(妖星神天)',
                     type: 'bar',
                     stack: '类型',
                     barWidth: '70%',
-                    data: lnetaChart.sortdata(xa, 4)
+                    data: lnetaChart.sortdata(xa, 4),
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside',
+                            formatter: function(params) {
+                                if(params.value==0){
+                                    return "";
+                                }
+                            },
+                            textBorderColor: '#000',
+                            textBorderWidth: 20
+                        }
+                    }
                 },
                 {
                     name: 'NMNB(其他)和3N',
                     type: 'bar',
                     stack: '类型',
                     barWidth: '70%',
-                    data: lnetaChart.sortdata(xa, 5)
+                    data: lnetaChart.sortdata(xa, 5),
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside',
+                            formatter: function(params) {
+                                if(params.value==0){
+                                    return "";
+                                }
+                            },
+                            textBorderColor: '#000',
+                            textBorderWidth: 20
+                        }
+                    }
                 }
             ]
         });
