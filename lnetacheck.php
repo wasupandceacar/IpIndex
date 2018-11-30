@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <link href="https://cdn.bootcss.com/bootstrap-material-design/4.0.2/bootstrap-material-design.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/lnetacheck.css">
-  <link href="https://cdn.bootcss.com/toastr.js/latest/toastr.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" rel="stylesheet">
 </head>
 
 <body class="nav-md">
@@ -34,7 +34,7 @@
 
     <!-- jQuery -->
     <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="https://cdn.bootcss.com/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
     <script src="https://cdn.bootcss.com/tether/1.4.0/js/tether.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap-material-design/4.0.2/bootstrap-material-design.iife.min.js"></script>

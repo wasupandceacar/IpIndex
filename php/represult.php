@@ -36,6 +36,7 @@ if($ret==0){
     array_push($arr, $row);
 }else{
     $row['result']='error';
+    $row['cmd']="PYTHONIOENCODING=utf-8 /usr/bin/python3.5 rep.py ".$path;
     array_push($arr, $row);
 }
 echo json_encode($arr, JSON_UNESCAPED_UNICODE);

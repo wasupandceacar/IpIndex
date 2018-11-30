@@ -7,9 +7,9 @@
 <title>琪露诺和大酱的小屋</title>
 
 <link rel="stylesheet" type="text/css" href="css/index.css" />
-<link href="https://cdn.bootcss.com/toastr.js/latest/toastr.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-<script src="https://cdn.bootcss.com/toastr.js/latest/toastr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
 <script type="text/javascript" src="js/webp.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
