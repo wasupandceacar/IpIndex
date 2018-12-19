@@ -59,12 +59,23 @@ CommonLib.prototype = {
 		jQuery('#date_span').html(year+"年"+month+"月"+day+"日");
 		var work=["红魔乡", "妖妖梦", "永夜抄", "风神录", "地灵殿", "星莲船", "大战争", "神灵庙", "辉针城", "绀珠传", "天空璋"]
 		num = Math.round(Math.random()*10);
-		$.getJSON('http://api.ipstack.com/186.116.207.169?access_key=eee15c4104e0dcfe4c447376ff7c4a33&output=json&legacy=1', function(data) {
-			var iparr=data.ip.split(".");
+		$.ajax({
+		type: "get",
+		async: false,
+		url: 'https://api.ipify.org/?format=jsonp',
+		dataType: "jsonp",
+		jsonp: "callback",
+		jsonpCallback:"getip",
+		success: function(json){
+			var iparr=json.ip.split(".");
 			Math.seed=7*parseInt(iparr[0])+6*parseInt(iparr[1])+5*parseInt(iparr[2])+4*parseInt(iparr[3])+3*year+2*month+day;
 			var workpt=Math.seededRandom(0, 10);
 			jQuery('#neta_span').html("今日宜打"+work[workpt]);
-		});
+		},
+		error: function(){
+
+		}
+	});
 		jQuery(".panel-default>.panel-heading").css("background-image", "");
 	},
 	onStart:function(){
