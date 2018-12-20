@@ -179,6 +179,7 @@ function turn(Degree, Speed){
     }
 }
 
+// 控制机器人移动距离和速度、倒退是否转向
 function move(Distance, Speed, Isturn){
     let distance = parseInt(Distance, 10);
     let speed = parseInt(Speed, 10);
