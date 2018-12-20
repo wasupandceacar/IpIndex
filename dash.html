@@ -19,6 +19,10 @@
 <button onclick="changeNodeAngle(document.querySelector('#node').value)">修改点头角度</button>&nbsp;&nbsp;&nbsp;&nbsp;<input id="node" type="text" size="17" placeholder="点头角度"><br/><br/>
 <button onclick="changeShakeAngle(document.querySelector('#shake').value)">修改摇头角度</button>&nbsp;&nbsp;&nbsp;&nbsp;<input id="shake" type="text" size="17" placeholder="摇头角度"><br/><br/>
 <button onclick="say(document.querySelector('#say').value)">说话</button>&nbsp;&nbsp;&nbsp;&nbsp;<input id="say" type="text" size="17" placeholder="话"><br/><br/>
+<button onclick="drive(document.querySelector('#drive').value)">行驶</button>&nbsp;&nbsp;&nbsp;&nbsp;<input id="drive" type="text" size="17" placeholder="行驶速度"><br/><br/>
+<button onclick="spin(document.querySelector('#spin').value)">旋转</button>&nbsp;&nbsp;&nbsp;&nbsp;<input id="spin" type="text" size="17" placeholder="旋转速度"><br/><br/>
+<button onclick="turn(document.querySelector('#turndegree').value, document.querySelector('#turnspeed').value)">转向</button>&nbsp;&nbsp;&nbsp;&nbsp;<input id="turndegree" type="text" size="17" placeholder="转向角度">&nbsp;&nbsp;&nbsp;&nbsp;<input id="turnspeed" type="text" size="17" placeholder="转向速度"><br/><br/>
+<button onclick="move(document.querySelector('#movedistance').value, document.querySelector('#movespeed').value, document.querySelector('#isturn').value)">移动</button>&nbsp;&nbsp;&nbsp;&nbsp;<input id="movedistance" type="text" size="17" placeholder="移动距离">&nbsp;&nbsp;&nbsp;&nbsp;<input id="movespeed" type="text" size="17" placeholder="移动速度">&nbsp;&nbsp;&nbsp;&nbsp;<input id="isturn" type="text" size="17" placeholder="是否转向参数"><br/><br/>
 </body>
 <script type='text/javascript' src='js/dash.js'></script>
 </html>

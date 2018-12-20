@@ -141,8 +141,93 @@ function changeShakeAngle(Angle) {
 function say(Say) {
     let sound = Sound_Array[Say];
     let cmd = ('18' + sound).dashcommand();
-    console.log("Bot say, Command: " + cmd.getcommand());
+    console.log("Bot Say, Command: " + cmd.getcommand());
     commandCharacteristic.writeValue(cmd);
+}
+
+// 控制机器人行驶速度
+function drive(Speed) {
+    let speed = parseInt(Speed, 10);
+    if(speed < 0){
+        speed += 0x800;
+    }
+    let cmd = ('02' + (speed & 0xff).toString(16).leftfix(2) + '00' +  ((speed >> 8) & 0x0f).toString(16).leftfix(2)).dashcommand();
+    console.log("Bot Drive, Command: " + cmd.getcommand());
+    commandCharacteristic.writeValue(cmd);
+}
+
+// 控制机器人旋转速度
+function spin(Speed) {
+    let speed = parseInt(Speed, 10);
+    if(speed < 0){
+        speed += 0x800;
+    }
+    let cmd = ('0200' + (speed & 0xff).toString(16).leftfix(2) + (((speed >> 8) & 0x1f) << 3).toString(16).leftfix(2)).dashcommand();
+    console.log("Bot Spin, Command: " + cmd.getcommand());
+    commandCharacteristic.writeValue(cmd);
+}
+
+// 控制机器人转向的角度和速度
+function turn(Degree, Speed){
+    let degree = parseInt(Degree, 10);
+    let speed = parseInt(Speed, 10);
+    if(degree != 0) {
+        let second = Math.abs(degree / speed);
+        let cmd = ('23' + getMoveString(0, degree, second, '80')).dashcommand();
+        console.log("Bot Turn, Command: " + cmd.getcommand());
+        commandCharacteristic.writeValue(cmd);
+    }
+}
+
+function move(Distance, Speed, Isturn){
+    let distance = parseInt(Distance, 10);
+    let speed = parseInt(Speed, 10);
+    let isturn = Isturn;
+    let second = Math.abs(distance / speed);
+    if(distance < 0) {
+        let cmd = ('23' + getMoveString(distance, 0, second, Isturn)).dashcommand();
+        console.log("Bot Move, Command: " + cmd.getcommand());
+        commandCharacteristic.writeValue(cmd);
+    }else{
+        let cmd = ('23' + getMoveString(distance, 0, second, '80')).dashcommand();
+        console.log("Bot Move, Command: " + cmd.getcommand());
+        commandCharacteristic.writeValue(cmd);
+    }
+}
+
+// 生成move的字符串（用于turn和move）
+function getMoveString(distance, degree, second, turnbyte){
+    if(distance * degree != 0){
+        console.log("Cannot turn and move at the same time!");
+        return null;
+    }
+
+    let six_byte = 0x0;
+    let seven_byte = 0x0;
+    let distance_low_byte = distance & 0xff;
+    let distance_high_byte = (distance >> 8) & 0x3f;
+    six_byte |= distance_high_byte;
+
+    let centiradian = Math.floor(((Math.PI * degree) / 180.0) * 100.0);
+    let turn_low_byte = centiradian & 0xff;
+    let turn_high_byte = ((centiradian >> 8) & 0x03) << 6;
+    six_byte |= turn_high_byte;
+    if(centiradian < 0){
+        seven_byte = 0xc0;
+    }
+
+    let millitime = Math.floor(second * 1000.0);
+    let time_low_byte = millitime & 0xff;
+    let time_high_byte = (millitime >> 8) & 0xff;
+
+    return distance_low_byte.toString(16).leftfix(2) +
+            '00' +
+            turn_low_byte.toString(16).leftfix(2) +
+            time_high_byte.toString(16).leftfix(2) +
+            time_low_byte.toString(16).leftfix(2) +
+            six_byte.toString(16).leftfix(2) +
+            seven_byte.toString(16).leftfix(2) +
+            turnbyte
 }
 
 // 生成命令数据流
