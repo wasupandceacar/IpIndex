@@ -16,8 +16,12 @@ var chickenrank = {
                 },
                 {
                     "data": "status"
+                },
+                {
+                    "data": "add_date"
                 }
             ],
+            "order": [[ 4, "desc" ]],
             "searching":false,
             "paging": false,
             'language': {
