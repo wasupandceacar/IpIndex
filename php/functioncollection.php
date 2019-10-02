@@ -35,6 +35,7 @@ function getCity($ip = '')
 
 function loginToDB($mysql_database)
 {
+    error_reporting(E_ALL ^ E_DEPRECATED);
     $mysql_server_name = 'localhost';
     $mysql_username = 'root';
     $mysql_password = '1248163264128';
