@@ -1,6 +1,6 @@
 <?php
 $path=$_POST['rpy'];
-exec("PYTHONIOENCODING=utf-8 /usr/bin/python3.5 rep.py ".$path,$array,$ret);
+exec("PYTHONIOENCODING=utf-8 /usr/local/bin/python3.6 rep.py ".$path,$array,$ret);
 $arr = array();
 if($ret==0){
     $row['result']='success';
@@ -36,7 +36,7 @@ if($ret==0){
     array_push($arr, $row);
 }else{
     $row['result']='error';
-    $row['cmd']="PYTHONIOENCODING=utf-8 /usr/bin/python3.5 rep.py ".$path;
+    $row['cmd']="PYTHONIOENCODING=utf-8 /usr/local/bin/python3.6 rep.py ".$path;
     array_push($arr, $row);
 }
 echo json_encode($arr, JSON_UNESCAPED_UNICODE);
